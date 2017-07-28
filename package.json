@@ -51,6 +51,8 @@
     "webpack2-stream-watch": "^3.2.2"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "fs": "0.0.1-security",
     "mustache": "^2.3.0",
     "promise-polyfill": "^6.0.2",
     "request": "^2.81.0",

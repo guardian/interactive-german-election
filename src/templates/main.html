@@ -4,10 +4,16 @@
                 {{#seats}}
             <div class="gv-elex-bar gv-{{party}} {{#goesThrough}}gv-goesthrough{{/goesThrough}}" style="width:{{share}}%"></div>
             {{/seats}}
-
             </div>    
-        </div>
 
-{{#btwkr17_umrechnung_btw13}}
-<p>{{Wahlkreisname}} {{SPD_Erststimmen}} {{Wähler}}</p>
-{{/btwkr17_umrechnung_btw13}}
+            <div class="gv-chamber-labels">
+                {{#seats}}
+                {{^excluded}}
+            <div class="gv-elex-label gv-{{party}}" style="left:{{left}}%">{{party}}</div>
+                
+                {{/excluded}}
+                {{/seats}}
+           </div>
+
+        </div>
+<div class="gv-2013-map"></div>

@@ -24,11 +24,29 @@ $fpd: yellow;
 .gv-chamber {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
+}
+
+.gv-chamber-graph {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.gv-elex-label {
+    position: absolute;
+    color: white;
+    padding-left: 2px;
+}
+
+.gv-chamber-labels {
+    width: 100%;
     margin-bottom: 100px;
 }
 
+
 .gv-elex-bar {
-    height: 15px;
+    height: 50px;
     display: inline-block;
     float:left;
     margin: 0 !important;
@@ -40,3 +58,19 @@ $fpd: yellow;
     box-sizing: border-box;
 }
 
+.gv-elex-labels {
+    margin-top: 60px;
+}
+
+svg {
+    width: 100%;
+}
+
+path {
+    fill: lightgrey;
+    &.gv-const-winner-CDU { fill: $cdu}
+    &.gv-const-winner-CSU { fill: $csu}
+    &.gv-const-winner-SPD { fill: $spd}
+    &.gv-const-winner-DIE_LINKE { fill: $linke}
+    &.gv-const-winner-GRÜNE { fill: $green}
+}
