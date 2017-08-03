@@ -1,19 +1,18 @@
-<div class="here">thing</div>
+<div class="gv-banner"></div>
+<div class="gv-chamber">
+    {{#seats}}
+    <div class="gv-elex-bar gv-{{party}} {{#goesThrough}}gv-goesthrough{{/goesThrough}}" style="width:{{share}}%"></div>
+    {{/seats}}
+</div>
+<div class="gv-halfway-marker"></div>
+<div class="gv-halfway-label">50% of seats</div>
 
-            <div class="gv-chamber">
-                {{#seats}}
-            <div class="gv-elex-bar gv-{{party}} {{#goesThrough}}gv-goesthrough{{/goesThrough}}" style="width:{{share}}%"></div>
-            {{/seats}}
-            </div>    
+<div class="gv-chamber-labels">
+    {{#seats}} {{^excluded}}
+    <div class="gv-elex-label gv-{{party}}" style="left:{{left}}%">{{party}}</div>
 
-            <div class="gv-chamber-labels">
-                {{#seats}}
-                {{^excluded}}
-            <div class="gv-elex-label gv-{{party}}" style="left:{{left}}%">{{party}}</div>
-                
-                {{/excluded}}
-                {{/seats}}
-           </div>
+    {{/excluded}} {{/seats}}
+</div>
 
-        </div>
+</div>
 <div class="gv-2013-map"></div>

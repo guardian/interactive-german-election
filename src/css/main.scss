@@ -44,6 +44,33 @@ $fpd: #ffce4b;
     margin-bottom: 100px;
 }
 
+.gv-banner {
+    background-image : url('<%= path %>/assets/reichstag.png');
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gv-halfway-marker {
+    height: 10px;
+    width: 1px;
+    background-color: #000;
+    left: 50%;
+    position: absolute;
+    top: 200px;
+    z-index: 1;
+}
+
+.gv-halfway-label {
+    text-align: center;
+    width:50px;
+    margin-left: calc(50% - 25px);
+    margin-top: 20px;
+    @include fs-data(3);
+    position: absolute;
+    top: 190px;
+}
+
 
 .gv-elex-bar {
     height: 50px;
