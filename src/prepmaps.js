@@ -24,6 +24,7 @@ export default async function prepmaps(data) {
     wks.forEach(function(w){
         var result = data.find(function(r) {return cleannumber(r.Wkr) == $(w).attr('id')});
         $(w).addClass(`gv-const-winner-${result.constituency_winner}`)
+        $(w).attr('data-name',`${result.Wahlkreisname}`)
     })
     /* commenting out population density stuff
     wks.forEach(function(w){

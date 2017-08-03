@@ -93,7 +93,20 @@ svg {
     width: 100%;
 }
 
-path {
+.gv-fe-tooltip {
+    display: none;
+    background-color: white;
+    color: black;
+    @include fs-data(2);
+    padding: 3px 5px;
+    transition: opacity 0.4s;
+    box-shadow: 0 0.2rem 1rem -0.4rem black;
+    border: 1px solid #ddd;
+    position: absolute;
+    pointer-events: none;
+}
+
+.gv-2013-map path {
     stroke:  white;
     stroke-width: 1px;
    // stroke-dasharray: 1,4;
@@ -105,3 +118,4 @@ path {
     &.gv-const-winner-GRÜNE { fill: $green}
     &:hover {opacity: 0.8}
 }
+

@@ -8,8 +8,8 @@ var maphtml = xhr.responseText;
 var mapdiv = document.querySelector('.gv-2013-map');
 mapdiv.innerHTML = maphtml;
 
-/*
-var depts = document.querySelectorAll(".dept");
+
+var depts = document.querySelectorAll("path");
 var tooltip = document.querySelector(".gv-fe-tooltip");
 
 Array.from(depts).forEach(dept => {
@@ -20,4 +20,3 @@ Array.from(depts).forEach(dept => {
         tooltip.style.display = "block";
     })
 })
-*/
