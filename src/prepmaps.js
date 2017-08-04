@@ -14,11 +14,7 @@ function cleannumber(input) {
 }
 
 export default async function prepmaps(data) {
-    var demographics = await rp({
-        uri: 'https://interactive.guim.co.uk/docsdata-test/15ntsjQYzDuH4HMMpp28cpN3lCLpkIpsDl3r5ADlLC8k.json',
-        json: true
-    });
-    var pd = demographics.sheets.popdensity;
+   
     var $ = cheerio.load(maptemplate);
     var wks = Array.from($('path'));
     wks.forEach(function(w){
@@ -27,6 +23,11 @@ export default async function prepmaps(data) {
         $(w).attr('data-name',`${result.Wahlkreisname}`)
     })
     /* commenting out population density stuff
+    var demographics = await rp({
+        uri: 'https://interactive.guim.co.uk/docsdata-test/15ntsjQYzDuH4HMMpp28cpN3lCLpkIpsDl3r5ADlLC8k.json',
+        json: true
+    });
+    var pd = demographics.sheets.popdensity;
     wks.forEach(function(w){
         var demodata = pd.find(function(d) {return cleannumber(d.wkr) == $(w).attr('id');})
         $(w).attr('data-density',demodata.popdensity);

@@ -60,7 +60,7 @@ let webpackPlugins = [
     })
 ];
 
-if(isDeploy) webpackPlugins.push(new UglifyJSPlugin);
+if (isDeploy) webpackPlugins.push(new UglifyJSPlugin);
 
 function buildJS(filename) {
     return () => {
@@ -72,7 +72,7 @@ function buildJS(filename) {
                     loaders: [{
                         test: /\.css$/,
                         loader: 'style!css'
-                    }, ],
+                    },],
                 },
                 module: {
                     rules: [
@@ -148,8 +148,8 @@ gulp.task('build:html', cb => {
 
         Promise.resolve(render()).then(html => {
             file('main.html', html, {
-                    'src': true
-                })
+                'src': true
+            })
                 .pipe(template({
                     path
                 }))

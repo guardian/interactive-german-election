@@ -1,3 +1,6 @@
+import resultsmap from '../templates/main.html'
+//import _ from 'xml2js'
+
 var xhr = new XMLHttpRequest;
 
 xhr.open('GET','<%= path %>/resultsmap.html',false);
