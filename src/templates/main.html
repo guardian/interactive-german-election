@@ -2,7 +2,7 @@
 <div class="gv-banner"></div>
 <div class="gv-chamber">
     {{#seats}}
-    <div class="gv-elex-bar gv-{{party}} {{#goesThrough}}gv-goesthrough{{/goesThrough}}" style="width:{{share}}%"></div>
+    <div class="gv-elex-bar gv-{{party}}" style="width:{{share}}%"></div>
     {{/seats}}
 </div>
 <div class="gv-halfway-marker"></div>
@@ -13,6 +13,15 @@
     <div class="gv-elex-label gv-{{party}}" style="left:{{left}}%">{{party}}</div>
 
     {{/excluded}} {{/seats}}
+</div>
+
+<div class="gv-legend">
+    <div class="gv-blobs">
+    {{#seats}}
+    <div class="gv-legend-entry">
+        <div class="gv-party-blob gv-{{party}}"></div>{{party}} {{party_gloss}}</div>
+    {{/seats}}
+</div>
 </div>
 
 </div>
