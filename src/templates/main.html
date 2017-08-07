@@ -1,30 +1,50 @@
-<div class="gv-elex">
-<div class="gv-banner"></div>
-<div class="gv-chamber">
-    {{#seats}}
-    <div class="gv-elex-bar gv-{{party}}" style="width:{{share}}%"></div>
-    {{/seats}}
-</div>
-<div class="gv-halfway-marker"></div>
-<div class="gv-halfway-label">50% of seats</div>
+<div class="gv-elex-wrapper">
+    <div class="gv-elex">
 
-<div class="gv-chamber-labels">
-    {{#seats}} {{^excluded}}
-    <div class="gv-elex-label gv-{{party}}" style="left:{{left}}%">{{party}}</div>
+        <div class="gv-chamber">
+            <div class="gv-banner"></div>
+            {{#seats}}
+            <div class="gv-elex-bar gv-{{party}}" style="width:{{seats_share}}%">
+                {{^excluded}}
+                <div class="gv-elex-label gv-{{party}} {{^major}}gv-minor{{/major}}">{{party}} {{#major}}{{displayseatshare}}%{{/major}}</div>
+                {{/excluded}}
+            </div>
+            {{/seats}}
+        </div>
 
-    {{/excluded}} {{/seats}}
-</div>
+        <div class="gv-halfway-marker"></div>
+        <div class="gv-halfway-label">50% of seats</div>
 
-<div class="gv-legend">
-    <div class="gv-blobs">
-    {{#seats}}
-    <div class="gv-legend-entry">
-        <div class="gv-party-blob gv-{{party}}"></div>{{party}} {{party_gloss}}</div>
-    {{/seats}}
-</div>
-</div>
+
+    </div>
+
+
+    <div class="gv-results-table">
+        <div class="gv-results-table-headers">
+            <div class="gv-party-blob gv-{{party}} gv-results-table-cell"></div>
+            <div class="gv-results-table-cell"></div>
+            <div class="gv-results-table-cell gv-party-gloss"></div>
+            <div class="gv-results-table-cell gv-table-numbers">% of votes</div>
+            <div class="gv-results-table-cell gv-table-numbers">% of seats</div>
+        </div>
+        {{#seats}}
+        <div class="gv-results-table-row">
+            <div class="gv-party-blob gv-{{party}} gv-results-table-cell"></div>
+            <div class="gv-results-table-cell">{{party}}</div>
+            <div class="gv-results-table-cell gv-party-gloss">{{party_gloss}}</div>
+            <div class="gv-results-table-cell gv-table-numbers">{{votes_share}}</div>
+            <div class="gv-results-table-cell gv-table-numbers">{{displayseatshare}}</div>
+        </div>
+        {{/seats}}
+    </div>
+
+    <div class="gv-elex-map">
+        <div class="gv-elex-map-header">
+            <h3>Constituency seats won by party</h3>
+        </div>
+        <div class="gv-elex-map-graphic"></div>
+    </div>
+
 
 </div>
-<div class="gv-2013-map"></div>
-<div class="gv-fe-tooltip"</div>
-</div>
+<div class="gv-fe-tooltip"></div>

@@ -6,7 +6,7 @@ xhr.send();
 
 var maphtml = xhr.responseText;
 
-var mapdiv = document.querySelector('.gv-2013-map');
+var mapdiv = document.querySelector('.gv-elex-map-graphic');
 mapdiv.innerHTML = maphtml;
 
 var depts = document.querySelectorAll("path");

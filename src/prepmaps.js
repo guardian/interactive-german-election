@@ -1,6 +1,6 @@
 import cheerio from 'cheerio'
 import fs from 'fs'
-import maptemplate from './src/templates/wahlkreise.html!text'
+import maptemplate from './src/templates/wahlkreisewithlabels.html!text'
 import rp from 'request-promise'
 
 function cleannumber(input) {
@@ -14,13 +14,15 @@ function cleannumber(input) {
 }
 
 export default async function prepmaps(data) {
-   
     var $ = cheerio.load(maptemplate);
     var wks = Array.from($('path'));
     wks.forEach(function(w){
         var result = data.find(function(r) {return cleannumber(r.Wkr) == $(w).attr('id')});
+        if (result != undefined){
         $(w).addClass(`gv-const-winner-${result.constituency_winner}`)
         $(w).attr('data-name',`${result.Wahlkreisname}`)
+        }
+
     })
     /* commenting out population density stuff
     var demographics = await rp({

@@ -1,6 +1,7 @@
 @import "mq";
 @import "fonts";
 
+
 $cdu : #005689;
 $csu : #4982b9;
 $spd : #c5230e;
@@ -22,6 +23,20 @@ $others: #667488;
     margin: 0 !important;
 }
 
+.gv-elex-wrapper {
+    max-width: 740px;
+    display: block;
+
+    @include mq(leftCol) {
+        margin-left: 160px;
+    }
+
+    @include mq(wide) {
+        margin-left: 240px;
+    }
+
+}
+
 .gv-chamber {
     display: block;
     width: 100%;
@@ -36,8 +51,16 @@ $others: #667488;
 
 .gv-elex-label {
     position: absolute;
+    top: 65px;
     color: white;
     padding-left: 2px;
+    &.gv-minor {
+        @include mq($until: tablet) {
+            display: none;
+        }
+    }
+    @include fs-textSans(4);
+    font-weight: bold;
 }
 
 .gv-chamber-labels {
@@ -46,10 +69,8 @@ $others: #667488;
 }
 
 .gv-banner {
-    background-image : url('<%= path %>/assets/reichstag.png');
-    height: 150px;
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background: url('<%= path %>/assets/architrave.png') no-repeat center bottom;
+    height: 64px;
 }
 
 .gv-halfway-marker {
@@ -57,8 +78,8 @@ $others: #667488;
     width: 1px;
     background-color: #000;
     left: 50%;
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: 36px;
     z-index: 1;
 }
 
@@ -68,8 +89,8 @@ $others: #667488;
     margin-left: calc(50% - 25px);
     margin-top: 20px;
     @include fs-data(3);
-    position: absolute;
-    top: 190px;
+    position: relative;
+    top: 9px;
 }
 
 
@@ -78,7 +99,7 @@ $others: #667488;
     display: inline-block;
     float:left;
     margin: 0 !important;
-    &.gv-CDU {background-color: $cdu;}
+    &.gv-CDU-CSU {background-color: $cdu;}
     &.gv-CSU {background-color: $csu;}
     &.gv-SPD {background-color: $spd;}
     &.gv-Linke {background-color: $linke;}
@@ -107,7 +128,20 @@ svg {
     pointer-events: none;
 }
 
-.gv-2013-map path {
+.gv-elex-map {
+    margin-top: 20px;
+    max-width: 350px;
+}
+
+.gv-elex-map-graphic {
+    height: 465px;
+}
+
+.gv-elex-map-graphic svg {
+    height: 100%;
+}
+
+.gv-elex-map-graphic path {
     stroke:  white;
     stroke-width: 1px;
    // stroke-dasharray: 1,4;
@@ -120,6 +154,11 @@ svg {
     &:hover {opacity: 0.8}
 }
 
+.gv-elex-map-graphic text {
+    @include fs-data(3);
+    font-size: 24px;
+}
+
 .gv-blobs {
     clear: both;
 }
@@ -129,13 +168,38 @@ svg {
     @include fs-textSans(3)
 }
 
+.gv-results-table {
+    display: table;
+    width: 100%;
+    @include fs-textSans(3);
+    border-collapse: separate;
+    border-spacing: 2px;
+
+}
+
+.gv-results-table-row {
+    display: table-row;
+    margin-bottom: 10px;
+}
+
+.gv-results-table-cell {
+    display: table-cell;
+    &.gv-table-numbers {
+        text-align:right;
+    }
+}
+
+.gv-results-table-headers{
+    display: table-header-group;
+    font-weight: bolder;
+}
+
 .gv-party-blob{
     margin-right: 3px;
-    display: inline-block;
     height: 1em;
     width: 1em;
     border-radius: 0.2em;
-    &.gv-CDU {background-color: $cdu;}
+    &.gv-CDU-CSU {background-color: $cdu;}
     &.gv-CSU {background-color: $csu;}
     &.gv-SPD {background-color: $spd;}
     &.gv-FDP {background-color: $fdp;}
