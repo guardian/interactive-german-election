@@ -6,15 +6,20 @@ xhr.send();
 
 var maphtml = xhr.responseText;
 
-var mapdiv = document.querySelector('.gv-elex-map-graphic');
-mapdiv.innerHTML = maphtml;
+var mapdivs = [].slice.apply(document.querySelectorAll('.gv-elex-map-graphic'));
+mapdivs.forEach(function(mapdiv) {
+    mapdiv.innerHTML = maphtml;
+    
+})
 
 var depts = document.querySelectorAll("path");
 var tooltip = document.querySelector(".gv-fe-tooltip");
 
 Array.from(depts).forEach(dept => {
     dept.addEventListener("mouseover", function(event){
-        tooltip.innerHTML = dept.getAttribute('data-name');
+        var deptname = dept.getAttribute('data-name');
+        var deptspd = dept.getAttribute('data-spdshare');
+        tooltip.innerHTML = dept.getAttribute('data-name') + ': SPD share ' + deptspd;
         tooltip.style.top = (event.layerY) + "px";
         tooltip.style.left = (event.layerX) + "px";
         tooltip.style.display = "block";

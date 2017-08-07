@@ -130,10 +130,18 @@ svg {
 
 .gv-elex-map {
     margin-top: 20px;
-    max-width: 350px;
+    display: inline-block;
+    width: 49%;
+    @media (max-width: 600px)
+    {
+        display: block;
+        width: 100%;
+    }
 }
 
 .gv-elex-map-graphic {
+    margin-left: 20px;
+    margin-right: 20px;
     height: 465px;
 }
 
@@ -144,8 +152,10 @@ svg {
 .gv-elex-map-graphic path {
     stroke:  white;
     stroke-width: 1px;
-   // stroke-dasharray: 1,4;
     fill: lightgrey;
+}
+
+.gv-constituency path {
     &.gv-const-winner-CDU { fill: $cdu}
     &.gv-const-winner-CSU { fill: $csu}
     &.gv-const-winner-SPD { fill: $spd}
@@ -154,9 +164,25 @@ svg {
     &:hover {opacity: 0.8}
 }
 
+.gv-spd-share path {
+        fill: $spd;
+        &.gv-spd-band-1 {opacity: 0.4}        
+        &.gv-spd-band-2 {opacity: 0.6}        
+        &.gv-spd-band-3 {opacity: 0.8}        
+        &.gv-spd-band-4 {opacity: 1}
+          &:hover {stroke-width:3px;}                
+}
+
+
+
 .gv-elex-map-graphic text {
     @include fs-data(3);
     font-size: 24px;
+}
+
+.gv-elex-title {
+    @include fs-header(3);
+    padding-bottom: 5px;
 }
 
 .gv-blobs {
@@ -210,4 +236,55 @@ svg {
     &.gv-Green {background-color: $green;}
     &.gv-Others {background-color: $others;}
     
+}
+
+
+
+
+.gv-elex-legend-blobs, .gv-elex-legend-labels {
+    line-height: 1;
+}
+
+.gv-elex-legend-labels div, .gv-elex-leader-labels div {
+    line-height: 1;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    @include fs-data(1);
+}
+
+.gv-elex-legend-labels div {
+    width:30px;
+    margin-right: 4px;
+}
+
+
+.gv-elex-leader-labels div {
+    margin: 0px 3px 0px 2px;
+    @include fs-data(2);
+}
+
+.gv-elex-legend {
+    padding-bottom: 10px;
+}
+
+
+.gv-elex-legend-blob {
+    line-height: 1;
+    display: inline-block;
+    height: 10px;
+    width: 30px;
+    position: relative;
+    .gv-spd-share & {
+        background-color: $spd;
+    }
+    .gv-constituency &{
+        background-color: white;
+    }
+
+    &.gv-spd-band-1  { opacity: 0.4   }
+    &.gv-spd-band-2  { opacity: 0.6   }
+    &.gv-spd-band-3  { opacity: 0.8   }
+    &.gv-spd-band-4  { opacity: 1   }
+
 }

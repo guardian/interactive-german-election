@@ -37,7 +37,7 @@ export async function render() {
         uri: config.docDataJson,
         json: true
     })
-    await prepmaps(data.sheets.constituency_winners);
+    await prepmaps(data.sheets.constituency_winners,data.sheets.raw);
     data.sheets.seats = getLefts(data.sheets.seats);
     var html = mustache.render(mainTemplate,data.sheets); 
     return html;
