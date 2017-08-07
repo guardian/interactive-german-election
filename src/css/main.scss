@@ -129,6 +129,7 @@ svg {
 }
 
 .gv-elex-map {
+    vertical-align: top;
     margin-top: 20px;
     display: inline-block;
     width: 49%;
@@ -137,6 +138,11 @@ svg {
         display: block;
         width: 100%;
     }
+}
+
+.gv-elex-map-gloss {
+    @include fs-textSans(3);
+    padding-right: 5em;
 }
 
 .gv-elex-map-graphic {
