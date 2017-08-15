@@ -19,7 +19,9 @@ Array.from(depts).forEach(dept => {
     dept.addEventListener("mouseover", function(event){
         var deptname = dept.getAttribute('data-name');
         var deptspd = dept.getAttribute('data-spdshare');
-        tooltip.innerHTML = dept.getAttribute('data-name') + ': SPD share ' + deptspd;
+        var deptafd = dept.getAttribute('data-afdshare');
+        
+                tooltip.innerHTML = dept.getAttribute('data-name') + ': SPD share ' + deptspd + '<br/ >AfD share: ' + deptafd;
         tooltip.style.top = (event.layerY) + "px";
         tooltip.style.left = (event.layerX) + "px";
         tooltip.style.display = "block";

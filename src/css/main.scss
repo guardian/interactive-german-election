@@ -2,8 +2,8 @@
 @import "fonts";
 
 
-$cdu : #005689;
-$csu : #4982b9;
+$cdu : #333;
+$csu : #333;
 $spd : #c5230e;
 $linke: #7e39a5;
 $green : #298422;
@@ -178,6 +178,14 @@ svg {
         &.gv-spd-band-4 {opacity: 1}
           &:hover {stroke-width:3px;}                
 }
+.gv-afd-share path {
+        fill: $afd;
+        &.gv-afd-band-1 {opacity: 0.4}        
+        &.gv-afd-band-2 {opacity: 0.6}        
+        &.gv-afd-band-3 {opacity: 0.8}        
+        &.gv-afd-band-4 {opacity: 1}
+          &:hover {stroke-width:3px;}                
+}
 
 
 
@@ -284,6 +292,9 @@ svg {
     .gv-spd-share & {
         background-color: $spd;
     }
+        .gv-afd-share & {
+        background-color: $afd;
+    }
     .gv-constituency &{
         background-color: white;
     }
@@ -292,5 +303,10 @@ svg {
     &.gv-spd-band-2  { opacity: 0.6   }
     &.gv-spd-band-3  { opacity: 0.8   }
     &.gv-spd-band-4  { opacity: 1   }
+
+    &.gv-afd-band-1  { opacity: 0.4   }
+    &.gv-afd-band-2  { opacity: 0.6   }
+    &.gv-afd-band-3  { opacity: 0.8   }
+    &.gv-afd-band-4  { opacity: 1   }
 
 }

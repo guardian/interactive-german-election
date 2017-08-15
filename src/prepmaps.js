@@ -49,6 +49,29 @@ export default async function prepmaps(constituency, raw) {
 
         }
     })
+    //Add class for AfD share
+    wks.forEach(function (w) {
+        var rawresult = raw.find(function (r) {
+            return cleannumber(r.wkr) == $(w).attr('id')
+        });
+        if (rawresult != undefined) {
+            var afdshare = 100 * (rawresult.AfD_Zweitstimmen / rawresult.Gültige_Zweitstimmen);
+
+            $(w).attr('data-afdshare', `${afdshare}`)
+
+            if (afdshare >= 15) {
+                $(w).addClass('gv-afd-band-4');
+            } else if (afdshare < 20 && afdshare >= 10) {
+                $(w).addClass('gv-afd-band-3');
+            } else if (afdshare < 10 && afdshare >= 5) {
+                $(w).addClass('gv-afd-band-2');
+            } else {
+                $(w).addClass('gv-afd-band-1')
+            }
+
+        }
+    })
+
 
 
 
