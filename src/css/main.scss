@@ -310,3 +310,48 @@ svg {
     &.gv-afd-band-4  { opacity: 1   }
 
 }
+
+.gv-coalition-bars-wrapper {
+    width: 100%;
+    display: block;
+    background-color: lightgrey;
+    height: 10px;
+
+    .gv-elex-bar {
+        height: 10px;
+    }
+}
+
+
+.gv-coalition-name {
+    margin-top: 20px;
+    @include fs-textSans(4);
+    max-width: 45%;
+
+}
+
+.gv-coalition-name:first-of-type {
+    margin-top: 0px;
+}
+
+.gv-coalitions-outer-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.gv-coalitions-wrapper {
+    position: relative;
+    .gv-halfway-marker {
+    height: 90%;
+    width: 1px;
+    background-color: #000;
+    left: 50%;
+    position: absolute;
+    /* top: 300px; */
+    z-index: 1;
+}
+    .gv-halfway-label {
+        top: 0px;
+        margin-top: 0px;
+}
+}
