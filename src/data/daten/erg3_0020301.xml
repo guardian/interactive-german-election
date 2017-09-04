@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ergebniseingang>
+    <WahlMetadaten>
+        <File Ursprungsname="erg3_0020301.xml" Erstellungszeit="2017-08-25T11:13:29.676+02:00" ErstellungszeitMillis="1503652409676" Ursprungsserver="wahltest1l.wi.stba.de" FileVersion="1"/>
+        <Wahl Wahlart="BUNDESTAGSWAHL_BUND" Wahltermin="2017-09-24+02:00" WahlId="BTW_BUND 17" GebietsartAuswertungseinheit="WAHLKREIS" GebietsartWahleinheit="WAHLKREIS" GebietsartFExport="WAHLKREIS" GebietsartBestaetigung="LAND"/>
+        <Lauf Programm="WAS" Version="1.12.2" Startzeit="1970-01-05T02:30:30.259+01:00" Master="wahltest1l.wi.stba.de" Server="wahltest1l.wi.stba.de">
+            <Daten Eingabe="VORLAEUFIG" Vergleich="VORPERIODE" Qualitaet="PRODUKTION" Status="ZWISCHENERGEBNIS" ZustSeqNr="0"/>
+            <Stimmeingabe>
+                <Eingabestand AuswertungseinheitenEingegangen="143" AuswertungseinheitenGesamt="299" LetzteAuswertungseinheit="203" Eingang="2017-08-25T11:13:23.000+02:00"/>
+            </Stimmeingabe>
+        </Lauf>
+    </WahlMetadaten>
+    <Gebietsergebnis ZeitErstEintreffen="2017-08-25T11:13:24.000+02:00" ZeitLetzteKorrektur="2017-08-25T11:13:24.000+02:00" AuswertungseinheitenErwartet="299" AuswertungseinheitenEingetroffen="143" ErgebnisVollstaendig="false" NrAenderung="0" Gebietsnummer="99" Gebietsart="BUND" AuswertungseinheitenGesamt="299">
+        <GebietText>Bundesgebiet</GebietText>
+        <Gruppenergebnis Gruppe="100" Gruppenart="ALLGEMEIN" Name="Wahlberechtigte">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="29369398" Prozent="n/a" AnzahlVergleich="29369398" ProzentVergleich="n/a" Differenz="0" ProzentDifferenz="n/a"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="200" Gruppenart="ALLGEMEIN" Name="Wähler">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="21343107" Prozent="72.671244" AnzahlVergleich="21343107" ProzentVergleich="34.453874" Differenz="0" ProzentDifferenz="38.217370"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="300" Gruppenart="ALLGEMEIN" Name="Ungültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="944070" Prozent="4.423301" AnzahlVergleich="335231" ProzentVergleich="1.570676" Differenz="608839" ProzentDifferenz="2.852626"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="478328" Prozent="2.241135" AnzahlVergleich="285011" ProzentVergleich="1.335377" Differenz="193317" ProzentDifferenz="0.905759"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="400" Gruppenart="ALLGEMEIN" Name="Gültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="20399037" Prozent="95.576698" AnzahlVergleich="21007876" ProzentVergleich="98.429324" Differenz="-608839" ProzentDifferenz="-2.852626"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="20864779" Prozent="97.758864" AnzahlVergleich="21058096" ProzentVergleich="98.664623" Differenz="-193317" ProzentDifferenz="-0.905759"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="2" Gruppenart="PARTEI" Name="CDU">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="9159093" Prozent="44.899634" AnzahlVergleich="9159093" ProzentVergleich="43.598377" Differenz="0" ProzentDifferenz="1.301257"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="8373661" Prozent="40.132996" AnzahlVergleich="8373661" ProzentVergleich="39.764568" Differenz="0" ProzentDifferenz="0.368428"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="1" Gruppenart="PARTEI" Name="SPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="7669434" Prozent="37.597039" AnzahlVergleich="7669434" ProzentVergleich="36.507422" Differenz="0" ProzentDifferenz="1.089618"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="6623780" Prozent="31.746226" AnzahlVergleich="6623780" ProzentVergleich="31.454791" Differenz="0" ProzentDifferenz="0.291435"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="34" Gruppenart="PARTEI" Name="DIE LINKE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1047618" Prozent="5.135624" AnzahlVergleich="1054280" ProzentVergleich="5.018499" Differenz="-6662" ProzentDifferenz="0.117126"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1249333" Prozent="5.987760" AnzahlVergleich="1249333" ProzentVergleich="5.932792" Differenz="0" ProzentDifferenz="0.054969"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="5" Gruppenart="PARTEI" Name="GRÜNE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1441995" Prozent="7.068936" AnzahlVergleich="1447770" ProzentVergleich="6.891558" Differenz="-5775" ProzentDifferenz="0.177379"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1847902" Prozent="8.856561" AnzahlVergleich="1847902" ProzentVergleich="8.775257" Differenz="0" ProzentDifferenz="0.081305"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="3" Gruppenart="PARTEI" Name="CSU">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="4" Gruppenart="PARTEI" Name="FDP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="483479" Prozent="2.370106" AnzahlVergleich="483479" ProzentVergleich="2.301418" Differenz="0" ProzentDifferenz="0.068689"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1065275" Prozent="5.105613" AnzahlVergleich="1065275" ProzentVergleich="5.058743" Differenz="0" ProzentDifferenz="0.046871"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="35" Gruppenart="PARTEI" Name="AfD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="371019" Prozent="1.818806" AnzahlVergleich="391125" ProzentVergleich="1.861802" Differenz="-20106" ProzentDifferenz="-0.042996"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="890293" Prozent="4.266965" AnzahlVergleich="890293" ProzentVergleich="4.227794" Differenz="0" ProzentDifferenz="0.039172"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="8" Gruppenart="PARTEI" Name="PIRATEN">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="109563" Prozent="0.537098" AnzahlVergleich="444949" ProzentVergleich="2.118010" Differenz="-335386" ProzentDifferenz="-1.580911"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="379977" Prozent="1.821140" AnzahlVergleich="436699" ProzentVergleich="2.073782" Differenz="-56722" ProzentDifferenz="-0.252641"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="21" Gruppenart="PARTEI" Name="NPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="24614" Prozent="0.120662" AnzahlVergleich="206002" ProzentVergleich="0.980594" Differenz="-181388" ProzentDifferenz="-0.859931"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="196106" Prozent="0.939890" AnzahlVergleich="196106" ProzentVergleich="0.931262" Differenz="0" ProzentDifferenz="0.008628"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="45" Gruppenart="PARTEI" Name="FREIE WÄHLER">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="68428" Prozent="0.335447" AnzahlVergleich="89909" ProzentVergleich="0.427978" Differenz="-21481" ProzentDifferenz="-0.092531"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="97148" Prozent="0.465607" AnzahlVergleich="97148" ProzentVergleich="0.461333" Differenz="0" ProzentDifferenz="0.004275"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="9" Gruppenart="PARTEI" Name="Tierschutzpartei">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="33809" Prozent="0.162038" AnzahlVergleich="50152" ProzentVergleich="0.238160" Differenz="-16343" ProzentDifferenz="-0.076121"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="22" Gruppenart="PARTEI" Name="ÖDP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="3341" Prozent="0.016378" AnzahlVergleich="5766" ProzentVergleich="0.027447" Differenz="-2425" ProzentDifferenz="-0.011069"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="17758" Prozent="0.085109" AnzahlVergleich="17758" ProzentVergleich="0.084329" Differenz="0" ProzentDifferenz="0.000781"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="37" Gruppenart="PARTEI" Name="Die PARTEI">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="13180" Prozent="0.064610" AnzahlVergleich="14641" ProzentVergleich="0.069693" Differenz="-1461" ProzentDifferenz="-0.005082"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="60001" Prozent="0.287570" AnzahlVergleich="60001" ProzentVergleich="0.284931" Differenz="0" ProzentDifferenz="0.002640"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="18" Gruppenart="PARTEI" Name="BP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="40" Gruppenart="PARTEI" Name="Volksabstimmung">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1748" Prozent="0.008569" AnzahlVergleich="1748" ProzentVergleich="0.008321" Differenz="0" ProzentDifferenz="0.000248"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="17622" Prozent="0.084458" AnzahlVergleich="17622" ProzentVergleich="0.083683" Differenz="0" ProzentDifferenz="0.000775"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="36" Gruppenart="PARTEI" Name="PDV">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="843" ProzentVergleich="0.004013" Differenz="n/a" ProzentDifferenz="-0.004013"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="9486" ProzentVergleich="0.045047" Differenz="n/a" ProzentDifferenz="-0.045047"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="17" Gruppenart="PARTEI" Name="MLPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="5525" Prozent="0.027084" AnzahlVergleich="5525" ProzentVergleich="0.026300" Differenz="0" ProzentDifferenz="0.000785"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="8423" Prozent="0.040369" AnzahlVergleich="8423" ProzentVergleich="0.039999" Differenz="0" ProzentDifferenz="0.000370"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="12" Gruppenart="PARTEI" Name="BüSo">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="1990" ProzentVergleich="0.009473" Differenz="n/a" ProzentDifferenz="-0.009473"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1536" Prozent="0.007361" AnzahlVergleich="3511" ProzentVergleich="0.016673" Differenz="-1975" ProzentDifferenz="-0.009311"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="15" Gruppenart="PARTEI" Name="SGP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="2155" Prozent="0.010328" AnzahlVergleich="3599" ProzentVergleich="0.017091" Differenz="-1444" ProzentDifferenz="-0.006763"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="14" Gruppenart="PARTEI" Name="DIE RECHTE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="2245" ProzentVergleich="0.010661" Differenz="n/a" ProzentDifferenz="-0.010661"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="41" Gruppenart="PARTEI" Name="AD-DEMOKRATEN">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="10" Gruppenart="PARTEI" Name="Tierschutzallianz">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="26" Gruppenart="PARTEI" Name="B*">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="29" Gruppenart="PARTEI" Name="BGE">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="24" Gruppenart="PARTEI" Name="DiB">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="11" Gruppenart="PARTEI" Name="DKP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="38" Gruppenart="PARTEI" Name="DM">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="43" Gruppenart="PARTEI" Name="Die Grauen">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="42" Gruppenart="PARTEI" Name="du.">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="19" Gruppenart="PARTEI" Name="MG">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="27" Gruppenart="PARTEI" Name="MENSCHLICHE WELT">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="44" Gruppenart="PARTEI" Name="Die Humanisten">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="33" Gruppenart="PARTEI" Name="Gesundheitsforschung">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="20" Gruppenart="PARTEI" Name="V-Partei³">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="32" Gruppenart="PARTEI" Name="Bündnis C">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="48" Gruppenart="PARTEI" Name="DIE EINHEIT">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="30" Gruppenart="PARTEI" Name="DIE VIOLETTEN">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="31" Gruppenart="PARTEI" Name="FAMILIE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="1483" ProzentVergleich="0.007059" Differenz="n/a" ProzentDifferenz="-0.007059"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="53" Gruppenart="PARTEI" Name="DIE FRAUEN">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="47" Gruppenart="PARTEI" Name="MIETERPARTEI">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="39" Gruppenart="PARTEI" Name="Neue Liberale">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="16" Gruppenart="PARTEI" Name="UNABHÄNGIGE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="28" Gruppenart="UEBRIGE" Name="Übrige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="29839" ProzentVergleich="0.142037" Differenz="n/a" ProzentDifferenz="-0.142037"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="105102" ProzentVergleich="0.499105" Differenz="n/a" ProzentDifferenz="-0.499105"/>
+        </Gruppenergebnis>
+    </Gebietsergebnis>
+    <Gebietsergebnis ZeitErstEintreffen="2017-08-25T11:13:24.000+02:00" ZeitLetzteKorrektur="2017-08-25T11:13:24.000+02:00" AuswertungseinheitenErwartet="15" AuswertungseinheitenEingetroffen="8" ErgebnisVollstaendig="false" NrAenderung="0" Gebietsnummer="7" Gebietsart="LAND" UegGebietsnummer="99" UegGebietsart="BUND" AuswertungseinheitenGesamt="15">
+        <GebietText>Rheinland-Pfalz</GebietText>
+        <Gruppenergebnis Gruppe="100" Gruppenart="ALLGEMEIN" Name="Wahlberechtigte">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="1567563" Prozent="n/a" AnzahlVergleich="1567563" ProzentVergleich="n/a" Differenz="0" ProzentDifferenz="n/a"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="200" Gruppenart="ALLGEMEIN" Name="Wähler">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="1136111" Prozent="72.476257" AnzahlVergleich="1136111" ProzentVergleich="36.738526" Differenz="0" ProzentDifferenz="35.737732"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="300" Gruppenart="ALLGEMEIN" Name="Ungültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="61655" Prozent="5.426846" AnzahlVergleich="25417" ProzentVergleich="2.237193" Differenz="36238" ProzentDifferenz="3.189653"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="24339" Prozent="2.142308" AnzahlVergleich="18054" ProzentVergleich="1.589105" Differenz="6285" ProzentDifferenz="0.553203"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="400" Gruppenart="ALLGEMEIN" Name="Gültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1074456" Prozent="94.573153" AnzahlVergleich="1110694" ProzentVergleich="97.762807" Differenz="-36238" ProzentDifferenz="-3.189653"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1111772" Prozent="97.857691" AnzahlVergleich="1118057" ProzentVergleich="98.410895" Differenz="-6285" ProzentDifferenz="-0.553203"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="2" Gruppenart="PARTEI" Name="CDU">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="552612" Prozent="51.431794" AnzahlVergleich="552612" ProzentVergleich="49.753758" Differenz="0" ProzentDifferenz="1.678036"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="517370" Prozent="46.535620" AnzahlVergleich="517370" ProzentVergleich="46.274027" Differenz="0" ProzentDifferenz="0.261594"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="1" Gruppenart="PARTEI" Name="SPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="349874" Prozent="32.562896" AnzahlVergleich="349874" ProzentVergleich="31.500485" Differenz="0" ProzentDifferenz="1.062412"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="298756" Prozent="26.872056" AnzahlVergleich="298756" ProzentVergleich="26.720999" Differenz="0" ProzentDifferenz="0.151058"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="5" Gruppenart="PARTEI" Name="GRÜNE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="55161" Prozent="5.133853" AnzahlVergleich="60936" ProzentVergleich="5.486300" Differenz="-5775" ProzentDifferenz="-0.352446"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="76247" Prozent="6.858150" AnzahlVergleich="76247" ProzentVergleich="6.819599" Differenz="0" ProzentDifferenz="0.038552"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="4" Gruppenart="PARTEI" Name="FDP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="28925" Prozent="2.692059" AnzahlVergleich="28925" ProzentVergleich="2.604228" Differenz="0" ProzentDifferenz="0.087832"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="60670" Prozent="5.457054" AnzahlVergleich="60670" ProzentVergleich="5.426378" Differenz="0" ProzentDifferenz="0.030676"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="34" Gruppenart="PARTEI" Name="DIE LINKE">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="51883" Prozent="4.828769" AnzahlVergleich="51883" ProzentVergleich="4.671224" Differenz="0" ProzentDifferenz="0.157545"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="58062" Prozent="5.222473" AnzahlVergleich="58062" ProzentVergleich="5.193116" Differenz="0" ProzentDifferenz="0.029358"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="35" Gruppenart="PARTEI" Name="AfD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="52046" Prozent="4.681355" AnzahlVergleich="52046" ProzentVergleich="4.655040" Differenz="0" ProzentDifferenz="0.026316"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="8" Gruppenart="PARTEI" Name="PIRATEN">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="8208" Prozent="0.763921" AnzahlVergleich="26866" ProzentVergleich="2.418848" Differenz="-18658" ProzentDifferenz="-1.654927"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="22759" Prozent="2.047092" AnzahlVergleich="22759" ProzentVergleich="2.035585" Differenz="0" ProzentDifferenz="0.011507"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="45" Gruppenart="PARTEI" Name="FREIE WÄHLER">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="24295" Prozent="2.261144" AnzahlVergleich="24295" ProzentVergleich="2.187371" Differenz="0" ProzentDifferenz="0.073773"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="12902" Prozent="1.160489" AnzahlVergleich="12902" ProzentVergleich="1.153966" Differenz="0" ProzentDifferenz="0.006524"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="21" Gruppenart="PARTEI" Name="NPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1287" Prozent="0.119781" AnzahlVergleich="9915" ProzentVergleich="0.892685" Differenz="-8628" ProzentDifferenz="-0.772903"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="9758" Prozent="0.877697" AnzahlVergleich="9758" ProzentVergleich="0.872764" Differenz="0" ProzentDifferenz="0.004934"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="22" Gruppenart="PARTEI" Name="ÖDP">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1259" Prozent="0.117175" AnzahlVergleich="2698" ProzentVergleich="0.242911" Differenz="-1439" ProzentDifferenz="-0.125735"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="2817" Prozent="0.253379" AnzahlVergleich="2817" ProzentVergleich="0.251955" Differenz="0" ProzentDifferenz="0.001424"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="17" Gruppenart="PARTEI" Name="MLPD">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="385" Prozent="0.034629" AnzahlVergleich="385" ProzentVergleich="0.034435" Differenz="0" ProzentDifferenz="0.000194"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="29" Gruppenart="PARTEI" Name="BGE">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="37" Gruppenart="PARTEI" Name="Die PARTEI">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="952" Prozent="0.088602" AnzahlVergleich="952" ProzentVergleich="0.085712" Differenz="0" ProzentDifferenz="0.002891"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="20" Gruppenart="PARTEI" Name="V-Partei³">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="48" Gruppenart="PARTEI" Name="DIE EINHEIT">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="39" Gruppenart="PARTEI" Name="Neue Liberale">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="28" Gruppenart="UEBRIGE" Name="Übrige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="1738" ProzentVergleich="0.156479" Differenz="n/a" ProzentDifferenz="-0.156479"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="6285" ProzentVergleich="0.562136" Differenz="n/a" ProzentDifferenz="-0.562136"/>
+        </Gruppenergebnis>
+    </Gebietsergebnis>
+    <Gebietsergebnis ZeitErstEintreffen="2017-08-25T11:13:24.000+02:00" ZeitLetzteKorrektur="2017-08-25T11:13:24.000+02:00" AuswertungseinheitenErwartet="1" AuswertungseinheitenEingetroffen="1" ErgebnisVollstaendig="true" NrAenderung="0" Gebietsnummer="203" Gebietsart="WAHLKREIS" UegGebietsnummer="7" UegGebietsart="LAND" AuswertungseinheitenGesamt="1">
+        <GebietText>Trier</GebietText>
+        <Direktergebnis>
+            <Gewinner Name="Steier, Andreas" Gruppe="2" Wahlergebnisart="VORLAEUFIG"/>
+            <Gewinner Name="" Gruppe="2" Wahlergebnisart="VORPERIODE"/>
+            <Erstunterlegener Name="Dr. Barley, Katarina" Gruppe="1" Wahlergebnisart="VORLAEUFIG"/>
+        </Direktergebnis>
+        <Gruppenergebnis Gruppe="100" Gruppenart="ALLGEMEIN" Name="Wahlberechtigte">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="193803" Prozent="n/a" AnzahlVergleich="193803" ProzentVergleich="n/a" Differenz="0" ProzentDifferenz="n/a"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="200" Gruppenart="ALLGEMEIN" Name="Wähler">
+            <Stimmergebnis Stimmart="KEINE" Anzahl="141134" Prozent="72.823434" AnzahlVergleich="141134" ProzentVergleich="72.823434" Differenz="0" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="300" Gruppenart="ALLGEMEIN" Name="Ungültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="7184" Prozent="5.090197" AnzahlVergleich="3321" ProzentVergleich="2.353083" Differenz="3863" ProzentDifferenz="2.737115"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="3187" Prozent="2.258137" AnzahlVergleich="2610" ProzentVergleich="1.849306" Differenz="577" ProzentDifferenz="0.408832"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="400" Gruppenart="ALLGEMEIN" Name="Gültige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="133950" Prozent="94.909802" AnzahlVergleich="137813" ProzentVergleich="97.646917" Differenz="-3863" ProzentDifferenz="-2.737115"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="137947" Prozent="97.741862" AnzahlVergleich="138524" ProzentVergleich="98.150694" Differenz="-577" ProzentDifferenz="-0.408832"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="2" Gruppenart="PARTEI" Name="CDU" Direktkandidat="Steier,Andreas">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="67281" Prozent="50.228443" AnzahlVergleich="67281" ProzentVergleich="48.820503" Differenz="0" ProzentDifferenz="1.407940"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="60909" Prozent="44.153914" AnzahlVergleich="60909" ProzentVergleich="43.969998" Differenz="0" ProzentDifferenz="0.183916"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="1" Gruppenart="PARTEI" Name="SPD" Direktkandidat="Dr. Barley,Katarina">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="42879" Prozent="32.011198" AnzahlVergleich="42879" ProzentVergleich="31.113901" Differenz="0" ProzentDifferenz="0.897297"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="36410" Prozent="26.394194" AnzahlVergleich="36410" ProzentVergleich="26.284254" Differenz="0" ProzentDifferenz="0.109941"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="5" Gruppenart="PARTEI" Name="GRÜNE" Direktkandidat="Rüffer,Corinna">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="9555" Prozent="7.133258" AnzahlVergleich="9555" ProzentVergleich="6.933308" Differenz="0" ProzentDifferenz="0.199951"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="13157" Prozent="9.537721" AnzahlVergleich="13157" ProzentVergleich="9.497993" Differenz="0" ProzentDifferenz="0.039728"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="4" Gruppenart="PARTEI" Name="FDP" Direktkandidat="Assenmacher,Adrian">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="2656" Prozent="1.982829" AnzahlVergleich="2656" ProzentVergleich="1.927249" Differenz="0" ProzentDifferenz="0.055580"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="6841" Prozent="4.959150" AnzahlVergleich="6841" ProzentVergleich="4.938494" Differenz="0" ProzentDifferenz="0.020657"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="34" Gruppenart="PARTEI" Name="DIE LINKE" Direktkandidat="Werner,Katrin">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="7687" Prozent="5.738708" AnzahlVergleich="7687" ProzentVergleich="5.577848" Differenz="0" ProzentDifferenz="0.160860"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="8688" Prozent="6.298070" AnzahlVergleich="8688" ProzentVergleich="6.271837" Differenz="0" ProzentDifferenz="0.026234"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="35" Gruppenart="PARTEI" Name="AfD" Direktkandidat="Ludwig,Erwin Nikolaus">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="5736" Prozent="4.158118" AnzahlVergleich="5736" ProzentVergleich="4.140799" Differenz="0" ProzentDifferenz="0.017320"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="8" Gruppenart="PARTEI" Name="PIRATEN">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="3508" Prozent="2.543005" AnzahlVergleich="3508" ProzentVergleich="2.532413" Differenz="0" ProzentDifferenz="0.010593"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="45" Gruppenart="PARTEI" Name="FREIE WÄHLER" Direktkandidat="Wefelscheid,Stephan">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1653" Prozent="1.234042" AnzahlVergleich="1653" ProzentVergleich="1.199451" Differenz="0" ProzentDifferenz="0.034592"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1289" Prozent="0.934416" AnzahlVergleich="1289" ProzentVergleich="0.930525" Differenz="0" ProzentDifferenz="0.003892"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="21" Gruppenart="PARTEI" Name="NPD" Direktkandidat="Babic,Safet">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="1287" Prozent="0.960806" AnzahlVergleich="1287" ProzentVergleich="0.933874" Differenz="0" ProzentDifferenz="0.026932"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="1043" Prozent="0.756087" AnzahlVergleich="1043" ProzentVergleich="0.752938" Differenz="0" ProzentDifferenz="0.003149"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="22" Gruppenart="PARTEI" Name="ÖDP">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="290" Prozent="0.210225" AnzahlVergleich="290" ProzentVergleich="0.209350" Differenz="0" ProzentDifferenz="0.000876"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="17" Gruppenart="PARTEI" Name="MLPD">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="76" Prozent="0.055093" AnzahlVergleich="76" ProzentVergleich="0.054864" Differenz="0" ProzentDifferenz="0.000230"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="29" Gruppenart="PARTEI" Name="BGE">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="37" Gruppenart="PARTEI" Name="Die PARTEI" Direktkandidat="Soffel,Andrej">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="952" Prozent="0.710712" AnzahlVergleich="952" ProzentVergleich="0.690791" Differenz="0" ProzentDifferenz="0.019922"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="20" Gruppenart="PARTEI" Name="V-Partei³">
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="538" Gruppenart="EINZELKANDIDAT" Name="EB: Niesen" Direktkandidat="Niesen,Albert">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="n/a" ProzentVergleich="0.000000" Differenz="n/a" ProzentDifferenz="0.000000"/>
+        </Gruppenergebnis>
+        <Gruppenergebnis Gruppe="28" Gruppenart="UEBRIGE" Name="Übrige">
+            <Stimmergebnis Stimmart="DIREKT" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="3863" ProzentVergleich="2.803074" Differenz="n/a" ProzentDifferenz="-2.803074"/>
+            <Stimmergebnis Stimmart="LISTE" Anzahl="n/a" Prozent="0.000000" AnzahlVergleich="577" ProzentVergleich="0.416534" Differenz="n/a" ProzentDifferenz="-0.416534"/>
+        </Gruppenergebnis>
+    </Gebietsergebnis>
+</Ergebniseingang>

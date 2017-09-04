@@ -1,0 +1,20 @@
+<div class="gv-coalitions-outer-wrapper">
+
+    <h3 class="gv-elex-title">Possible coalitions</h3>
+
+    <div class="gv-coalitions-wrapper">
+        <div class="gv-halfway-label">50% of seats</div>
+        <div class="gv-halfway-marker"></div>
+
+        {{#coalitions}}
+        <div class="gv-chamber-graph">
+            <div class="gv-coalition-name">{{gloss}}</div>
+            <div class="gv-coalition-bars-wrapper">
+                {{#filteredlist}}
+                <div class="gv-elex-bar gv-{{party}}" style="width:{{seats_share}}%"></div>
+                {{/filteredlist}}
+            </div>
+        </div>
+        {{/coalitions}}
+    </div>
+</div>
