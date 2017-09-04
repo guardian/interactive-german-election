@@ -4,9 +4,13 @@ import rp from "request-promise"
 import config from '../config.json'
 import mustache from 'mustache'
 import prepmaps from './prepmaps.js'
+import testdata from './tidy.json'
+import constituency_winners from './constituencyWinners.json'
+
+
 
 function twodecimals(input) {
-    return Math.round(input * 10) / 10;
+    return Math.round(input * 100) / 100;
 }
 
 var partialTemplates = {
@@ -45,16 +49,70 @@ function createCoalitions(data, permutations) {
 
 
 function getLefts(seats) {
+    console.log(seats);
     seats.map(function (p) {
-        p.seats == 0 ? p.excluded = true : p.excluded = false;
-        p.displayseatshare = twodecimals(p.seats_share);
+        cleannumber(p.percent) < 5 ? p.excluded = true : p.excluded = false;
+        p.displayseatshare = twodecimals(p.percent);
     })
     var cumulativeleft = 0;
     for (var i = 0; i < seats.length; i++) {
         seats[i].left = cumulativeleft;
-        cumulativeleft += cleannumber(seats[i].seats_share);
+        cumulativeleft += cleannumber(seats[i].percent);
     }
     return seats;
+}
+
+function prepSummaryData(testdata) {
+
+    var summary = testdata.bundSummary;
+    //    console.log(summary.parties);
+
+    var cdu = summary.parties.find(function (p) {
+        return p.party == 'CDU'
+    });
+    var csu = summary.parties.find(function (p) {
+        return p.party == 'CSU'
+    });
+    var combinedpercent = cleannumber(cdu.percent) + cleannumber(csu.percent);
+    var combinedpercentchange = cleannumber(cdu.percentChange) + cleannumber(csu.percentChange)
+    var cducsu = {
+        party: "CDUCSU",
+        percent: combinedpercent,
+        percentChange: combinedpercentchange
+    }
+    // Add combined party to list
+    summary.parties.unshift(cducsu);
+    // Remove individual parties from list
+    summary.parties = summary.parties.filter(function (p) {
+        return p.party !== 'CSU' && p.party !== 'CDU' && cleannumber(p.percent) > 2.5;
+    })
+    var bundestagtotal = 0;
+    summary.parties.forEach(function (p) {
+        if (cleannumber(p.percent) >= 5) {
+            bundestagtotal += cleannumber(p.percent);
+        }
+    })
+    summary.parties.map(function (p) {
+        p.partyclass = p.party.replace(" ", "").toLowerCase();
+        if (cleannumber(p.percent) >= 5) {
+            p.seatspercent = 100 * (cleannumber(p.percent) / cleannumber(bundestagtotal))
+            p.seatsdisplay = twodecimals(p.seatspercent);
+
+        };
+        switch (p.party) {
+            case "DIE LINKE": p.displayname = "Die Linke";
+                break;
+            case "GRÜNE": p.displayname = "Greens";
+                break;
+            case "CDUCSU": p.displayname = "CDU/CSU";
+                break;
+            default: p.displayname = p.party;
+        }
+        p.votesdisplay = twodecimals(p.percent);
+
+    })
+
+    return summary;
 }
 
 export async function render() {
@@ -63,15 +121,14 @@ export async function render() {
         uri: config.docDataJson,
         json: true
     })
-    await prepmaps(data.sheets.constituency_winners, data.sheets.raw);
-    data.sheets.seats = getLefts(data.sheets.seats);
-    var coalitions = createCoalitions(data.sheets.seats, data.sheets.permutations);
+    await prepmaps(constituency_winners, data.sheets.raw);
+    var preppeddata = prepSummaryData(testdata);
+    var coalitions = createCoalitions(testdata.seats);
     var templatedata = {
-        "seats" : data.sheets.seats,
+        "seats": preppeddata.parties,
         "coalitions" : coalitions,
-        "copy" : data.sheets.copy
+        "copy": data.sheets.copy
     }
-    console.log(coalitions[0].filteredlist);
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);
     return html;
 }

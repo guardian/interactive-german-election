@@ -3,6 +3,7 @@
 
 
 $cdu : #333;
+$cducsu : #333;
 $csu : #333;
 $spd : #c5230e;
 $linke: #7e39a5;
@@ -100,10 +101,14 @@ $others: #667488;
     float:left;
     margin: 0 !important;
     &.gv-CDU-CSU {background-color: $cdu;}
+    &.gv-cducsu {background-color: $cdu;}
     &.gv-CSU {background-color: $csu;}
-    &.gv-SPD {background-color: $spd;}
-    &.gv-Linke {background-color: $linke;}
-    &.gv-Grüne {background-color: $green;}
+    &.gv-spd {background-color: $spd;}
+    &.gv-dielinke {background-color: $linke;}
+    &.gv-grüne {background-color: $green;}
+        &.gv-afd {background-color: $afd;}
+    &.gv-fdp {background-color: $fdp;}
+
     box-sizing: border-box;
 }
 
@@ -165,8 +170,8 @@ svg {
     &.gv-const-winner-CDU { fill: $cdu}
     &.gv-const-winner-CSU { fill: $csu}
     &.gv-const-winner-SPD { fill: $spd}
-    &.gv-const-winner-DIE_LINKE { fill: $linke}
-    &.gv-const-winner-GRÜNE { fill: $green}
+    &.gv-const-winner-linke { fill: $linke}
+    &.gv-const-winner-greens { fill: $green}
     &:hover {opacity: 0.8}
 }
 
@@ -240,13 +245,13 @@ svg {
     width: 1em;
     border-radius: 0.2em;
     &.gv-CDU-CSU {background-color: $cdu;}
-    &.gv-CSU {background-color: $csu;}
-    &.gv-SPD {background-color: $spd;}
-    &.gv-FDP {background-color: $fdp;}
-    &.gv-FPD {background-color: $fdp;}
-    &.gv-AfD {background-color: $afd;}
-    &.gv-Linke {background-color: $linke;}
-    &.gv-Grüne {background-color: $green;}
+    &.gv-cducsu {background-color: $csu;}
+    &.gv-spd {background-color: $spd;}
+    &.gv-fdp {background-color: $fdp;}
+    &.gv-fpd {background-color: $fdp;}
+    &.gv-afd {background-color: $afd;}
+    &.gv-dielinke {background-color: $linke;}
+    &.gv-grüne {background-color: $green;}
     &.gv-Green {background-color: $green;}
     &.gv-Others {background-color: $others;}
     

@@ -4,9 +4,9 @@
         <div class="gv-chamber">
             <div class="gv-banner"></div>
             {{#seats}}
-            <div class="gv-elex-bar gv-{{party}}" style="width:{{seats_share}}%">
+            <div class="gv-elex-bar gv-{{partyclass}}" style="width:{{seatspercent}}%">
                 {{^excluded}}
-                <div class="gv-elex-label gv-{{party}} {{^major}}gv-minor{{/major}}">{{party}} {{#major}}{{displayseatshare}}%{{/major}}</div>
+                <div class="gv-elex-label gv-{{partyclass}} {{^major}}gv-minor{{/major}}">{{displayname}} {{#major}}{{seatsdisplay}}%{{/major}}</div>
                 {{/excluded}}
             </div>
             {{/seats}}
@@ -21,7 +21,7 @@
 
     <div class="gv-results-table">
         <div class="gv-results-table-headers">
-            <div class="gv-party-blob gv-{{party}} gv-results-table-cell"></div>
+            <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
             <div class="gv-results-table-cell"></div>
             <div class="gv-results-table-cell gv-party-gloss"></div>
             <div class="gv-results-table-cell gv-table-numbers">% of votes</div>
@@ -29,11 +29,11 @@
         </div>
         {{#seats}}
         <div class="gv-results-table-row">
-            <div class="gv-party-blob gv-{{party}} gv-results-table-cell"></div>
-            <div class="gv-results-table-cell">{{party}}</div>
+            <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
+            <div class="gv-results-table-cell">{{displayname}}</div>
             <div class="gv-results-table-cell gv-party-gloss">{{party_gloss}}</div>
-            <div class="gv-results-table-cell gv-table-numbers">{{votes_share}}</div>
-            <div class="gv-results-table-cell gv-table-numbers">{{displayseatshare}}</div>
+            <div class="gv-results-table-cell gv-table-numbers">{{votesdisplay}}</div>
+            <div class="gv-results-table-cell gv-table-numbers">{{seatsdisplay}}</div>
         </div>
         {{/seats}}
     </div>
