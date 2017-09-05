@@ -5,6 +5,7 @@ var url = 'https://service.bundeswahlleiter.de/medien/daten/'
 var fs = require('fs')
 var xmlparse = require('pixl-xml')
 var localdatadir = './data/daten/'
+var dataoutdir = './data/data-out/'
 var monster = [];
 var constituencyWinners = [];
 var seats = [];
@@ -31,8 +32,6 @@ var dedupedwahlkreislisting = wahlkreislisting.filter(function (w) {
     })
     return w.substring(0, 1) != 'X';
 })
-
-var samplefile = xmlparse.parse(fs.readFileSync('./data/daten/erg3_0029503.xml', 'utf8'));
 
 function formatPartyList(listinput, targetArray) {
     if (!targetArray) {
@@ -73,33 +72,11 @@ dedupedwahlkreislisting.forEach(function (f) {
     kreis.id = kreis.filename.substring(7, 10);
     kreis.raw = xmlparse.parse(fs.readFileSync(localdatadir + f, 'utf8'));
     kreis.result = kreis.raw.Gebietsergebnis[2];
-    // console.log(kreis.result.Direktergebnis);
     kreis.partyresults = kreis.result.Gruppenergebnis.filter(function (g) {
         return g.Gruppenart == "PARTEI";
     });
 
     formatPartyList(kreis.partyresults, kreis.zweitstimmen);
-    /*
-        kreis.partyresults.forEach(function(p){
-            if (Array.isArray(p.Stimmergebnis) == true) {
-                p.listVote = p.Stimmergebnis.find(function(a){
-                    return a.Stimmart == 'LISTE';
-                });
-            } else if (p.Stimmergebnis.Stimmart == 'LISTE') {
-                p.listVote = p.Stimmergebnis;
-            }
-            if (p.listVote != undefined) {
-                var zs = 
-                {
-                party : p.Name,
-                percent : p.listVote.Prozent,
-                percentChange : p.listVote.ProzentVergleich
-    
-                }
-            }
-            kreis.zweitstimmen.push(zs);
-        })
-        */
     kreis.constituencyWinner = kreis.result.Direktergebnis.Gewinner[0].Gruppe;
     monster.push(kreis);
     constituencyWinners.push({
@@ -134,31 +111,3 @@ tidy = {
 
 fs.writeFileSync('monster.json', JSON.stringify(monster));
 fs.writeFileSync('tidy.json', JSON.stringify(tidy));
-fs.writeFileSync('constituencyWinners.json', JSON.stringify(constituencyWinners));
-
-
-
-/* HOW TO
-
-Compile a list of all erg3 files √
-for each one get the variant with the highest revision number √
-fetch and read the file for each!    
-get the declaration time / update timestamp of the file 
-get the winner
-get the share of second vote for each party
-push that wahlkreis object to a big array
-sort the array
-the first one has the bund data we need (so we go back to it to extract the total, having sorted the whole array)
-
-
-
-/*
-rp.get({
-  uri: url,
-  headers: {
-    'Authorization': 'Basic ' + shortcut
-  }
-}).then(function ok(response) {
-  console.dir(response);
-});
-*/

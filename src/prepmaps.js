@@ -13,45 +13,49 @@ function cleannumber(input) {
     }
 }
 
-function cleanup(constituencies) {
-    constituencies.forEach(function(constituency){
+ function cleanup(constituencies) {
+     constituencies.forEach(function(constituency){
     switch (constituency.constituencyWinner) {
-        case '2' : constituency.party = "CDU";
+        case '2' : constituency.constituencyWinnerParty = "CDU";
         break;
-        case '1' : constituency.party = "SPD";
+        case '1' : constituency.constituencyWinnerParty = "SPD";
         break;
-        case '34' : constituency.party = "linke";
+        case '34' : constituency.constituencyWinnerParty = "linke";
         break;
-        case '5' : constituency.party = "greens";
+        case '5' : constituency.constituencyWinnerParty = "greens";
         break;
-        case '3' : constituency.party = "CSU";
+        case '3' : constituency.constituencyWinnerParty = "CSU";
         break;
         default : "undeclared"
     }
     })
 
-}
+} 
 
-export default async function prepmaps(constituencies) {
-    cleanup(constituencies);
+export default async function prepmaps(seats) {
+
+    cleanup(seats);
     var $ = cheerio.load(maptemplate);
     var wks = Array.from($('path'));
     // Add class for constituency winner
     wks.forEach(function (w) {
-        var result = constituencies.find(function (r) { return cleannumber(r.id) == $(w).attr('id') });
+        var result = seats.find(function (r) { return cleannumber(r.id) == $(w).attr('id') });
         if (result != undefined) {
-            $(w).addClass(`gv-const-winner-${result.party}`)
+            $(w).addClass(`gv-const-winner-${result.constituencyWinnerParty}`)
             $(w).attr('data-name', `${result.Wahlkreisname}`)
         }
 
     })
-    // Add class for SPD share
-    wks.forEach(function (w) {
-        var rawresult = constituencies.find(function (r) {
+     // Add class for SPD share
+     wks.forEach(function (w) {
+        var result = seats.find(function (r) {
             return cleannumber(r.id) == $(w).attr('id')
         });
-        // RESUME HERE - get SPD Vote share from tidyjson
-//        var spdvote = 
+        if (result != undefined){
+        var spdvote = result.zweitstimmen.find(function(z){
+            return z.party == 'SPD';
+        })
+        var spdshare = spdvote.percent;
 
             $(w).attr('data-spdshare', `${spdshare}`)
 
@@ -66,33 +70,35 @@ export default async function prepmaps(constituencies) {
             }
 
         }
-    })
-    //Add class for AfD share
-    wks.forEach(function (w) {
-        var rawresult = raw.find(function (r) {
-            return cleannumber(r.wkr) == $(w).attr('id')
+
+    })  
+     //Add class for AfD share
+ wks.forEach(function (w) {
+        var result = seats.find(function (r) {
+            return cleannumber(r.id) == $(w).attr('id')
         });
-        if (rawresult != undefined) {
-            var afdshare = 100 * (rawresult.AfD_Zweitstimmen / rawresult.Gültige_Zweitstimmen);
+      
+        if (result != undefined){
+        var afdvote = result.zweitstimmen.find(function(z){
+            return z.party == 'AfD';
+        })
+        var afdshare = afdvote.percent;
 
             $(w).attr('data-afdshare', `${afdshare}`)
 
-            if (afdshare >= 15) {
+            if (afdshare >= 40) {
                 $(w).addClass('gv-afd-band-4');
-            } else if (afdshare < 20 && afdshare >= 10) {
+            } else if (afdshare < 40 && afdshare >= 30) {
                 $(w).addClass('gv-afd-band-3');
-            } else if (afdshare < 10 && afdshare >= 5) {
+            } else if (afdshare < 30 && afdshare >= 20) {
                 $(w).addClass('gv-afd-band-2');
             } else {
                 $(w).addClass('gv-afd-band-1')
             }
 
         }
-    })
 
-
-
-
+    })  
 
     /* commenting out population density stuff
     var demographics = await rp({

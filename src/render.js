@@ -49,7 +49,6 @@ function createCoalitions(data, permutations) {
 
 
 function getLefts(seats) {
-    console.log(seats);
     seats.map(function (p) {
         cleannumber(p.percent) < 5 ? p.excluded = true : p.excluded = false;
         p.displayseatshare = twodecimals(p.percent);
@@ -65,8 +64,6 @@ function getLefts(seats) {
 function prepSummaryData(testdata) {
 
     var summary = testdata.bundSummary;
-    //    console.log(summary.parties);
-
     var cdu = summary.parties.find(function (p) {
         return p.party == 'CDU'
     });
@@ -121,9 +118,9 @@ export async function render() {
         uri: config.docDataJson,
         json: true
     })
-    await prepmaps(constituency_winners, data.sheets.raw);
+    await prepmaps(testdata.seats);
     var preppeddata = prepSummaryData(testdata);
-    var coalitions = createCoalitions(testdata.seats);
+    var coalitions = createCoalitions(testdata.bundSummary.parties,data.sheets.permutations);
     var templatedata = {
         "seats": preppeddata.parties,
         "coalitions" : coalitions,
