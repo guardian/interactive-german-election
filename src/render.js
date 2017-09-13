@@ -4,17 +4,16 @@ import rp from "request-promise"
 import config from '../config.json'
 import mustache from 'mustache'
 import prepmaps from './prepmaps.js'
-import testdata from './tidy.json'
-import constituency_winners from './constituencyWinners.json'
+import data2 from './src/data/data-out/tidy.json!text'
 
-
-
-function twodecimals(input) {
-    return Math.round(input * 100) / 100;
-}
+const data = JSON.parse(data2)
 
 var partialTemplates = {
     "coalitions": coalitionTemplate
+}
+
+function twodecimals(input) {
+    return Math.round(input * 10) / 10;
 }
 
 
@@ -61,9 +60,9 @@ function getLefts(seats) {
     return seats;
 }
 
-function prepSummaryData(testdata) {
+function prepSummaryData(data) {
 
-    var summary = testdata.bundSummary;
+    var summary = data.bundSummary;
     var cdu = summary.parties.find(function (p) {
         return p.party == 'CDU'
     });
@@ -93,19 +92,43 @@ function prepSummaryData(testdata) {
         p.partyclass = p.party.replace(" ", "").toLowerCase();
         if (cleannumber(p.percent) >= 5) {
             p.seatspercent = 100 * (cleannumber(p.percent) / cleannumber(bundestagtotal))
-            p.seatsdisplay = twodecimals(p.seatspercent);
+            p.seatsdisplay = twodecimals(p.seatspercent).toFixed(1);
 
         };
         switch (p.party) {
             case "DIE LINKE": p.displayname = "Die Linke";
                 break;
-            case "GRÜNE": p.displayname = "Greens";
+            case "GRÜNE": p.displayname = "Grüne";
                 break;
             case "CDUCSU": p.displayname = "CDU/CSU";
                 break;
             default: p.displayname = p.party;
         }
-        p.votesdisplay = twodecimals(p.percent);
+        switch (p.party) {
+            case "DIE LINKE": p.gloss = "Radical left";
+            p.seats2013 = 10.1;
+                break;
+            case "GRÜNE": p.gloss = "Greens";
+            p.seats2013 = 10.0;
+                break;
+            case "CDUCSU": p.gloss = "Conservatives";
+            p.seats2013 = 49.3;
+                break;
+            case "SPD": p.gloss = "Social democrats";
+            p.seats2013 = 30.6;
+                break;
+            case "FDP": p.gloss = "Liberals";
+            p.seats2013 = 0;
+                break;
+            case "AfD": p.gloss = "Anti-immigrant";
+            p.seats2013 = 0;
+                break;
+
+                default: p.displayname = p.party;
+        }
+
+        p.votesdisplay = twodecimals(p.percent).toFixed(1);
+        p.changedisplay = p.percentChange >= 0 ? '+' + twodecimals(p.percentChange): twodecimals(p.percentChange);
 
     })
 
@@ -114,17 +137,17 @@ function prepSummaryData(testdata) {
 
 export async function render() {
 
-    var data = await rp({
+    var docsdata = await rp({
         uri: config.docDataJson,
         json: true
     })
-    await prepmaps(testdata.seats);
-    var preppeddata = prepSummaryData(testdata);
-    var coalitions = createCoalitions(testdata.bundSummary.parties,data.sheets.permutations);
+    await prepmaps(data.seats,docsdata.sheets.wk_names);
+    var preppeddata = prepSummaryData(data);
+    var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);
     var templatedata = {
         "seats": preppeddata.parties,
         "coalitions" : coalitions,
-        "copy": data.sheets.copy
+        "copy": docsdata.sheets.copy
     }
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);
     return html;

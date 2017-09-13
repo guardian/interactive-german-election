@@ -97,6 +97,9 @@ $others: #667488;
 
 .gv-elex-bar {
     height: 50px;
+    .gv-2013 & {
+        height:20px;
+    }
     display: inline-block;
     float:left;
     margin: 0 !important;
@@ -146,6 +149,7 @@ svg {
 }
 
 .gv-elex-map-gloss {
+    margin-top: 20px;
     @include fs-textSans(3);
     padding-right: 5em;
 }
@@ -214,11 +218,12 @@ svg {
 }
 
 .gv-results-table {
+    margin-top: 30px;
     display: table;
     width: 100%;
     @include fs-textSans(3);
     border-collapse: separate;
-    border-spacing: 2px;
+    border-spacing: 4px;
 
 }
 

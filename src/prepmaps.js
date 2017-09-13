@@ -3,6 +3,11 @@ import fs from 'fs'
 import maptemplate from './src/templates/wahlkreisewithlabels.html!text'
 import rp from 'request-promise'
 
+function twodecimals(input) {
+    return Math.round(input * 10) / 10;
+}
+
+
 function cleannumber(input) {
     if (typeof input == "string") {
         input = input.replace(/,/g, "");
@@ -29,20 +34,27 @@ function cleannumber(input) {
         default : "undeclared"
     }
     })
-
 } 
 
-export default async function prepmaps(seats) {
-
+export default async function prepmaps(seats,wk_names) {
     cleanup(seats);
     var $ = cheerio.load(maptemplate);
     var wks = Array.from($('path'));
+    // Add name
+    wks.forEach(function (w) {
+        var match = wk_names.find(function (n) { return cleannumber(n.wkr) == $(w).attr('id') });
+        if (match != undefined) {
+            $(w).attr('data-name', `${match.Wahlkreisname}`)
+        }
+
+    })
+
+
     // Add class for constituency winner
     wks.forEach(function (w) {
         var result = seats.find(function (r) { return cleannumber(r.id) == $(w).attr('id') });
         if (result != undefined) {
             $(w).addClass(`gv-const-winner-${result.constituencyWinnerParty}`)
-            $(w).attr('data-name', `${result.Wahlkreisname}`)
         }
 
     })
