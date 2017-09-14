@@ -4,9 +4,13 @@ import rp from "request-promise"
 import config from '../config.json'
 import mustache from 'mustache'
 import prepmaps from './prepmaps.js'
-import data2 from './src/data/data-out/tidy.json!text'
+import crawl from './crawl.js'
 
-const data = JSON.parse(data2)
+//uncomment the following to abandon the crawl
+//import data2 from './src/data/data-out/tidy.json!text'
+//var data = JSON.parse(data2)
+
+
 
 var partialTemplates = {
     "coalitions": coalitionTemplate
@@ -141,6 +145,7 @@ export async function render() {
         uri: config.docDataJson,
         json: true
     })
+    var data = await crawl();
     await prepmaps(data.seats,docsdata.sheets.wk_names);
     var preppeddata = prepSummaryData(data);
     var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);

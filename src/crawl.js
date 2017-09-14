@@ -4,8 +4,8 @@ var password = 'A4MV!ds2017rl'
 var url = 'https://service.bundeswahlleiter.de/medien/daten/'
 var fs = require('fs')
 var xmlparse = require('pixl-xml')
-var localdatadir = './data/daten/'
-var dataoutdir = './data/data-out/'
+var localdatadir = './src/data/daten/'
+var dataoutdir = './src/data/data-out/'
 var monster = [];
 var constituencyWinners = [];
 var seats = [];
@@ -17,6 +17,7 @@ var tidy = {}
 var shortcut = 'bWVkaWVuOkE0TVYhZHMyMDE3cmw='
 
 
+export default async function prepmaps() {
 
 var wahlkreislisting = fs.readdirSync(localdatadir).filter(function (f) { return f.substring(0, 4) == 'erg3' })
 
@@ -109,6 +110,10 @@ tidy = {
     seats
 }
 
+return tidy;
 
-fs.writeFileSync(dataoutdir + 'monster.json', JSON.stringify(monster));
-fs.writeFileSync(dataoutdir + '/tidy.json', JSON.stringify(tidy));
+
+//fs.writeFileSync(dataoutdir + 'monster.json', JSON.stringify(monster));
+fs.writeFileSync(dataoutdir + 'tidy.json', JSON.stringify(tidy));
+
+};
