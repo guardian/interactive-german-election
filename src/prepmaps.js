@@ -112,6 +112,37 @@ export default async function prepmaps(seats,wk_names) {
 
     })  
 
+
+
+// Add class for CDU/CSU share
+ wks.forEach(function (w) {
+    var result = seats.find(function (r) {
+        return cleannumber(r.id) == $(w).attr('id')
+    });
+  
+    if (result != undefined){
+    var cduvote = result.zweitstimmen.find(function(z){
+        return z.party == 'CDU' || z.party == 'CSU';
+    })
+    var cdushare = cduvote.percent;
+
+        $(w).attr('data-cdushare', `${cdushare}`)
+
+        if (cdushare >= 60) {
+            $(w).addClass('gv-cdu-band-4');
+        } else if (cdushare < 60 && cdushare >= 50) {
+            $(w).addClass('gv-cdu-band-3');
+        } else if (cdushare < 50 && cdushare >= 40) {
+            $(w).addClass('gv-cdu-band-2');
+        } else {
+            $(w).addClass('gv-cdu-band-1')
+        }
+
+    }
+
+})  
+
+
     /* commenting out population density stuff
     var demographics = await rp({
         uri: 'https://interactive.guim.co.uk/docsdata-test/15ntsjQYzDuH4HMMpp28cpN3lCLpkIpsDl3r5ADlLC8k.json',

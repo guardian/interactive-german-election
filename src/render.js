@@ -145,6 +145,7 @@ export async function render() {
     var preppeddata = prepSummaryData(data);
     var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);
     var templatedata = {
+        "declared" : data.bundSummary.declared,
         "seats": preppeddata.parties,
         "coalitions" : coalitions,
         "copy": docsdata.sheets.copy

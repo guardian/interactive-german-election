@@ -36,8 +36,9 @@ Array.from(depts).forEach(dept => {
         var deptname = dept.getAttribute('data-name');
         var deptspd = dept.getAttribute('data-spdshare');
         var deptafd = dept.getAttribute('data-afdshare');
+        var deptcdu = dept.getAttribute('data-cdushare');
         
-        tooltip.innerHTML = dept.getAttribute('data-name') + '<br/ >SPD: ' + deptspd + '<br/ >AfD: ' + deptafd;
+        tooltip.innerHTML = dept.getAttribute('data-name') + '<br/ >SPD: ' + deptspd + '<br/ >AfD: ' + deptafd + '<br/ >CDU/CSU: ' + deptcdu;
         tooltip.style.top = (event.layerY) + "px";
         tooltip.style.left = (event.layerX) + "px";
         tooltip.style.display = "block";

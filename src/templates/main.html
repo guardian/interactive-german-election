@@ -1,9 +1,12 @@
 <div class="gv-elex-wrapper">
     <div class="gv-elex">
+        <div class="gv-elex-status">
+            <h3 class="gv-elex-title">{{#copy}}{{status}}{{/copy}}</h3>
+        </div>
+        <div class="gv-elex-declared-count gv-elex-subtitle">{{declared}} of 299 constituencies declared</div>
 
         <div class="gv-chamber">
-            <div class="gv-elex-status">{{#copy}}{{status}}{{/copy}}</div>
-            <div class="gv-banner"></div>
+            <!--    <div class="gv-banner"></div> -->
             {{#seats}}
             <div class="gv-elex-bar gv-{{partyclass}}" style="width:{{seatspercent}}%">
                 {{^excluded}}
@@ -16,7 +19,7 @@
 
         <div class="gv-halfway-marker"></div>
         <div class="gv-halfway-label">50% of seats</div>
-<!--
+        <!--
 
         <div class="gv-chamber gv-2013">
             <h3>2013 result</h3>
@@ -33,104 +36,136 @@
     </div>
 -->
 
-    <div class="gv-results-table">
-        <div class="gv-results-table-headers">
-            <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
-            <div class="gv-results-table-cell"></div>
-            <div class="gv-results-table-cell gv-party-gloss"></div>
-            <div class="gv-results-table-cell gv-table-numbers">% of votes</div>
-            <div class="gv-results-table-cell gv-table-numbers">+/- %</div>
-            <div class="gv-results-table-cell gv-table-numbers">% of seats</div>
+        <div class="gv-results-table">
+            <div class="gv-results-table-headers">
+                <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
+                <div class="gv-results-table-cell"></div>
+                <div class="gv-results-table-cell gv-party-gloss"></div>
+                <div class="gv-results-table-cell gv-table-numbers">% of votes</div>
+                <div class="gv-results-table-cell gv-table-numbers">+/- %</div>
+                <div class="gv-results-table-cell gv-table-numbers">% of seats</div>
+            </div>
+            {{#seats}}
+            <div class="gv-results-table-row">
+                <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
+                <div class="gv-results-table-cell">{{displayname}}</div>
+                <div class="gv-results-table-cell gv-party-gloss">{{gloss}}</div>
+                <div class="gv-results-table-cell gv-table-numbers">{{votesdisplay}}</div>
+                <div class="gv-results-table-cell gv-table-numbers">{{changedisplay}}</div>
+                <div class="gv-results-table-cell gv-table-numbers">{{seatsdisplay}}</div>
+            </div>
+            {{/seats}}
         </div>
-        {{#seats}}
-        <div class="gv-results-table-row">
-            <div class="gv-party-blob gv-{{partyclass}} gv-results-table-cell"></div>
-            <div class="gv-results-table-cell">{{displayname}}</div>
-            <div class="gv-results-table-cell gv-party-gloss">{{gloss}}</div>
-            <div class="gv-results-table-cell gv-table-numbers">{{votesdisplay}}</div>
-            <div class="gv-results-table-cell gv-table-numbers">{{changedisplay}}</div>
-            <div class="gv-results-table-cell gv-table-numbers">{{seatsdisplay}}</div>
+
+        <div class="gv-chamber-gloss gv-gloss">{{#copy}}{{chamber_gloss}}{{/copy}}</div>
+
+
+        {{ > coalitions }}
+
+
+        <div class="gv-elex-map">
+            <div class="gv-elex-map-header">
+                <h3 class="gv-elex-title">Constituency seats won by party</h3>
+            </div>
+            <div class="gv-elex-legend-blobs gv-constituency">
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-4">&nbsp;</div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-3">&nbsp;</div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-2">&nbsp;</div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-1">&nbsp;</div>
+            </div>
+            <div class="gv-elex-legend-labels">
+                <div>&nbsp;</div>
+                <div>&nbsp; </div>
+                <div>&nbsp; </div>
+                <div>&nbsp; </div>
+            </div>
+            <div class="gv-elex-map-graphic gv-constituency"></div>
+            <div class="gv-elex-map-gloss gv-constituency">
+                <p>{{#copy}}{{constituency_map}}{{/copy}}</p>
+            </div>
+
         </div>
-        {{/seats}}
+
+        <div class="gv-elex-map">
+            <div class="gv-elex-map-header">
+                <h3 class="gv-elex-title">SPD share of vote</h3>
+            </div>
+            <div class="gv-elex-legend-blobs gv-spd-share">
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-4"></div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-3"></div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-2"></div>
+                <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-1"></div>
+            </div>
+            <div class="gv-elex-legend-labels">
+                <div>40%+</div>
+                <div>30+</div>
+                <div>20+</div>
+                <div>
+                    &lt; 20</div>
+            </div>
+
+            <div class="gv-elex-map-graphic gv-spd-share"></div>
+            <div class="gv-elex-map-gloss gv-spd-share">
+                <p>{{#copy}}{{spd_share_map}}{{/copy}}
+                    <p>
+            </div>
+
+        </div>
+
+
+        <div class="gv-elex-map">
+            <div class="gv-elex-map-header">
+                <h3 class="gv-elex-title">AfD share of vote</h3>
+            </div>
+            <div class="gv-elex-legend-blobs gv-afd-share">
+                <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-4"></div>
+                <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-3"></div>
+                <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-2"></div>
+                <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-1"></div>
+            </div>
+            <div class="gv-elex-legend-labels">
+                <div>20%+</div>
+                <div>10+</div>
+                <div>5+</div>
+                <div>
+                    &lt; 5</div>
+            </div>
+
+            <div class="gv-elex-map-graphic gv-afd-share"></div>
+            <div class="gv-elex-map-gloss gv-afd-share">
+                <p>{{#copy}}{{afd_share_map}}{{/copy}}
+                    <p>
+            </div>
+
+        </div>
+
+        <div class="gv-elex-map">
+            <div class="gv-elex-map-header">
+                <h3 class="gv-elex-title">CDU/CSU share of vote</h3>
+            </div>
+            <div class="gv-elex-legend-blobs gv-cdu-share">
+                <div class="gv-elex-legend-blob gv-cdu-share gv-cdu-band-4"></div>
+                <div class="gv-elex-legend-blob gv-cdu-share gv-cdu-band-3"></div>
+                <div class="gv-elex-legend-blob gv-cdu-share gv-cdu-band-2"></div>
+                <div class="gv-elex-legend-blob gv-cdu-share gv-cdu-band-1"></div>
+            </div>
+            <div class="gv-elex-legend-labels">
+                <div>60%+</div>
+                <div>50+</div>
+                <div>40+</div>
+                <div>
+                    &lt; 40</div>
+            </div>
+
+            <div class="gv-elex-map-graphic gv-cdu-share"></div>
+            <div class="gv-elex-map-gloss gv-cdu-share">
+                <p>{{#copy}}{{cdu_share_map}}{{/copy}}
+                    <p>
+            </div>
+
+        </div>
     </div>
 
-
-    {{ > coalitions }}
-
-
-    <div class="gv-elex-map">
-        <div class="gv-elex-map-header">
-            <h3 class="gv-elex-title">Constituency seats won by party</h3>
-        </div>
-        <div class="gv-elex-legend-blobs gv-constituency">
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-4">&nbsp;</div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-3">&nbsp;</div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-2">&nbsp;</div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-1">&nbsp;</div>
-        </div>
-        <div class="gv-elex-legend-labels">
-            <div>&nbsp;</div>
-            <div>&nbsp; </div>
-            <div>&nbsp; </div>
-            <div>&nbsp; </div>
-        </div>
-        <div class="gv-elex-map-graphic gv-constituency"></div>
-        <div class="gv-elex-map-gloss gv-constituency">{{#copy}}{{constituency_map}}{{/copy}}</div>
-
-    </div>
-
-    <div class="gv-elex-map">
-        <div class="gv-elex-map-header">
-            <h3 class="gv-elex-title">SPD share of vote</h3>
-        </div>
-        <div class="gv-elex-legend-blobs gv-spd-share">
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-4"></div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-3"></div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-2"></div>
-            <div class="gv-elex-legend-blob gv-spd-share gv-spd-band-1"></div>
-        </div>
-        <div class="gv-elex-legend-labels">
-            <div>40%+</div>
-            <div>30+</div>
-            <div>20+</div>
-            <div>
-                &lt; 20</div>
-        </div>
-
-        <div class="gv-elex-map-graphic gv-spd-share"></div>
-        <div class="gv-elex-map-gloss gv-spd-share">
-            <p>{{#copy}}{{spd_share_map}}{{/copy}}
-                <p>
-        </div>
-
-    </div>
-
-
-    <div class="gv-elex-map">
-        <div class="gv-elex-map-header">
-            <h3 class="gv-elex-title">AfD share of vote</h3>
-        </div>
-        <div class="gv-elex-legend-blobs gv-afd-share">
-            <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-4"></div>
-            <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-3"></div>
-            <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-2"></div>
-            <div class="gv-elex-legend-blob gv-afd-share gv-afd-band-1"></div>
-        </div>
-        <div class="gv-elex-legend-labels">
-            <div>20%+</div>
-            <div>10+</div>
-            <div>5+</div>
-            <div>
-                &lt; 5</div>
-        </div>
-
-        <div class="gv-elex-map-graphic gv-afd-share"></div>
-        <div class="gv-elex-map-gloss gv-afd-share">
-            <p>{{#copy}}{{afd_share_map}}{{/copy}}
-                <p>
-        </div>
-
-    </div>
 </div>
 
 

@@ -88,7 +88,8 @@ dedupedwahlkreislisting.forEach(function (f) {
         constituencyWinner: kreis.constituencyWinner,
         zweitstimmen: kreis.zweitstimmen
     })
-    fs.writeFileSync(dataoutdir + kreis.id + '.json', JSON.stringify(kreis))
+    // uncomment the next line if you want to interrogate the individual results
+//    fs.writeFileSync(dataoutdir + kreis.id + '.json', JSON.stringify(kreis))
 })
 
 var latestdate = Math.max.apply(Math, monster.map(function (o) { return parseInt(o.raw.WahlMetadaten.File.ErstellungszeitMillis); }))
@@ -110,4 +111,4 @@ tidy = {
 
 
 fs.writeFileSync(dataoutdir + 'monster.json', JSON.stringify(monster));
-fs.writeFileSync(dataoutdir + 'tidy.json', JSON.stringify(tidy));
+fs.writeFileSync(dataoutdir + '/tidy.json', JSON.stringify(tidy));

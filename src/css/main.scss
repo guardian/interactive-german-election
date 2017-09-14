@@ -39,6 +39,7 @@ $others: #667488;
 }
 
 .gv-chamber {
+    margin-top: 20px;
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -80,7 +81,7 @@ $others: #667488;
     background-color: #000;
     left: 50%;
     position: relative;
-    top: 36px;
+    top: 46px;
     z-index: 1;
 }
 
@@ -148,7 +149,13 @@ svg {
     }
 }
 
-.gv-elex-map-gloss {
+.gv-elex-subtitle {
+    margin-top: 0px;
+    @include fs-textSans(3);
+    line-height: 1;
+}
+
+.gv-elex-map-gloss, .gv-gloss {
     margin-top: 20px;
     @include fs-textSans(3);
     padding-right: 5em;
@@ -196,6 +203,15 @@ svg {
           &:hover {stroke-width:3px;}                
 }
 
+.gv-cdu-share path {
+    fill: $cdu;
+    &.gv-cdu-band-1 {opacity: 0.4}        
+    &.gv-cdu-band-2 {opacity: 0.6}        
+    &.gv-cdu-band-3 {opacity: 0.8}        
+    &.gv-cdu-band-4 {opacity: 1}
+      &:hover {stroke-width:3px;}                
+}
+
 
 
 .gv-elex-map-graphic text {
@@ -205,7 +221,8 @@ svg {
 
 .gv-elex-title {
     @include fs-header(3);
-    padding-bottom: 5px;
+    padding-bottom: 0px;
+    line-height: 1;
 }
 
 .gv-blobs {
@@ -305,6 +322,11 @@ svg {
         .gv-afd-share & {
         background-color: $afd;
     }
+
+    .gv-cdu-share & {
+        background-color: $cdu;
+    }
+
     .gv-constituency &{
         background-color: white;
     }
@@ -318,6 +340,11 @@ svg {
     &.gv-afd-band-2  { opacity: 0.6   }
     &.gv-afd-band-3  { opacity: 0.8   }
     &.gv-afd-band-4  { opacity: 1   }
+
+    &.gv-cdu-band-1  { opacity: 0.4   }
+    &.gv-cdu-band-2  { opacity: 0.6   }
+    &.gv-cdu-band-3  { opacity: 0.8   }
+    &.gv-cdu-band-4  { opacity: 1   }
 
 }
 
