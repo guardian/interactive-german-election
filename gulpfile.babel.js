@@ -1,3 +1,5 @@
+console.log(process.argv[3]);
+
 import config from './config.json'
 
 import gulp from 'gulp'

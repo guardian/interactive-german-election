@@ -155,8 +155,9 @@ export async function render() {
         "declared" : data.bundSummary.declared,
         "seats": preppeddata.parties,
         "coalitions" : coalitions,
-        "copy": docsdata.sheets.copy
+        "copy": docsdata.sheets.copy,
     }
+    if (config.exitpoll) { templatedata.exitpoll = true };
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);
     return html;
 }
