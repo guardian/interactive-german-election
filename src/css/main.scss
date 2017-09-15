@@ -108,6 +108,7 @@ $others: #667488;
     &.gv-cducsu {background-color: $cdu;}
     &.gv-CSU {background-color: $csu;}
     &.gv-spd {background-color: $spd;}
+    &.gv-linke {background-color: $linke;}
     &.gv-dielinke {background-color: $linke;}
     &.gv-grüne {background-color: $green;}
         &.gv-afd {background-color: $afd;}
@@ -176,6 +177,7 @@ svg {
     stroke-width: 1px;
     fill: lightgrey;
 }
+
 
 .gv-constituency path {
     &.gv-const-winner-CDU { fill: $cdu}
@@ -375,6 +377,11 @@ svg {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.gv-undeclared {
+    fill: lightgrey !important;
+}
+
 
 .gv-coalitions-wrapper {
     position: relative;

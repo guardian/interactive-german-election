@@ -1,10 +1,16 @@
 <div class="gv-elex-wrapper">
     <div class="gv-elex">
         <div class="gv-elex-status">
-            <h3 class="gv-elex-title">{{#copy}}{{status}}{{/copy}}</h3>
+                {{^exitpoll}}
+                <h3 class="gv-elex-title">{{#copy}}{{status}}{{/copy}}</h3>
+                {{/exitpoll}}
+             {{#exitpoll}}   
+            <h3 class="gv-elex-title">Exit poll 1800CET</h3>
+            {{/exitpoll}}
         </div>
+        {{^exitpoll}}
         <div class="gv-elex-declared-count gv-elex-subtitle">{{declared}} of 299 constituencies declared</div>
-
+        {{/exitpoll}}
         <div class="gv-chamber">
             <!--    <div class="gv-banner"></div> -->
             {{#seats}}

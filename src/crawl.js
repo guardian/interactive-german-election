@@ -110,10 +110,11 @@ tidy = {
     seats
 }
 
+fs.writeFileSync(dataoutdir + 'tidy.json', JSON.stringify(tidy));
+
 return tidy;
 
 
 //fs.writeFileSync(dataoutdir + 'monster.json', JSON.stringify(monster));
-fs.writeFileSync(dataoutdir + 'tidy.json', JSON.stringify(tidy));
 
 };

@@ -2,12 +2,16 @@ import mainTemplate from './src/templates/main.html!text'
 import coalitionTemplate from './src/templates/coalition.html!text'
 import mapsTemplate from './src/templates/maps.html!text'
 import rp from "request-promise"
-import config from '../config.json'
+import baseconfig from '../config.json'
+import exitpollconfig from '../exitpollconfig.json'
+
+const config = process.argv[3] == '--exitpoll' ? exitpollconfig : baseconfig;
+
 import mustache from 'mustache'
 import prepmaps from './prepmaps.js'
 import crawl from './crawl.js'
 
-//uncomment the following to abandon the crawl
+//uncomment the following to use a precooked tidy json and not crawl the local data for each build
 //import data2 from './src/data/data-out/tidy.json!text'
 //var data = JSON.parse(data2)
 
@@ -38,10 +42,12 @@ function createCoalitions(data, permutations) {
     permutations.forEach(function (p) {
         p.parties = p.parties.replace("CDU,","CDU-CSU,")
         var partyArray = p.parties.split(",");
+        console.log(partyArray);
         var outcome = {
             "heading": p.name,
             "gloss": p.longname,
             "filteredlist": data.filter(function (d) {
+                console.log(d.party);
                 return partyArray.indexOf(d.party) >= 0;
             })
 
@@ -150,14 +156,24 @@ export async function render() {
     var data = await crawl();
     await prepmaps(data.seats,docsdata.sheets.wk_names);
     var preppeddata = prepSummaryData(data);
-    var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);
+    if (config.exitpoll == true) {
+        var coalitions = createCoalitions(docsdata.sheets.exitpoll,docsdata.sheets.permutations);
+        var seats = docsdata.sheets.exitpoll;    
+     }
+    else {
+        var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);
+        var seats = preppeddata.parties;    
+    }
     var templatedata = {
         "declared" : data.bundSummary.declared,
-        "seats": preppeddata.parties,
+        "seats": seats,
         "coalitions" : coalitions,
         "copy": docsdata.sheets.copy,
     }
-    if (config.exitpoll) { templatedata.exitpoll = true };
+    console.log(coalitions[0]);
+    console.log(preppeddata.parties);
+    if (config.exitpoll == true) { 
+        templatedata.exitpoll = true };
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);
     return html;
 }

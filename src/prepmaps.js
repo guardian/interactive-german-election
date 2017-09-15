@@ -44,7 +44,8 @@ export default async function prepmaps(seats,wk_names) {
     wks.forEach(function (w) {
         var match = wk_names.find(function (n) { return cleannumber(n.wkr) == $(w).attr('id') });
         if (match != undefined) {
-            $(w).attr('data-name', `${match.Wahlkreisname}`)
+            $(w).attr('data-name', `${match.Wahlkreisname}`);
+            $(w).addClass('gv-undeclared');
         }
 
     })
@@ -55,8 +56,8 @@ export default async function prepmaps(seats,wk_names) {
         var result = seats.find(function (r) { return cleannumber(r.id) == $(w).attr('id') });
         if (result != undefined) {
             $(w).addClass(`gv-const-winner-${result.constituencyWinnerParty}`)
+            $(w).removeClass('gv-undeclared')
         }
-
     })
      // Add class for SPD share
      wks.forEach(function (w) {

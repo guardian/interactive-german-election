@@ -1,6 +1,7 @@
-console.log(process.argv[3]);
+import baseconfig from './config.json'
+import exitpollconfig from './exitpollconfig.json'
 
-import config from './config.json'
+const config = process.argv[3] == '--exitpoll' ? exitpollconfig : baseconfig;
 
 import gulp from 'gulp'
 import file from 'gulp-file'
