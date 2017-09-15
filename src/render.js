@@ -1,5 +1,6 @@
 import mainTemplate from './src/templates/main.html!text'
 import coalitionTemplate from './src/templates/coalition.html!text'
+import mapsTemplate from './src/templates/maps.html!text'
 import rp from "request-promise"
 import config from '../config.json'
 import mustache from 'mustache'
@@ -13,7 +14,8 @@ import crawl from './crawl.js'
 
 
 var partialTemplates = {
-    "coalitions": coalitionTemplate
+    "coalitions": coalitionTemplate,
+    "maps" : mapsTemplate
 }
 
 function twodecimals(input) {
