@@ -42,12 +42,10 @@ function createCoalitions(data, permutations) {
     permutations.forEach(function (p) {
         p.parties = p.parties.replace("CDU,","CDU-CSU,")
         var partyArray = p.parties.split(",");
-        console.log(partyArray);
         var outcome = {
             "heading": p.name,
             "gloss": p.longname,
             "filteredlist": data.filter(function (d) {
-                console.log(d.party);
                 return partyArray.indexOf(d.party) >= 0;
             })
 
@@ -170,8 +168,6 @@ export async function render() {
         "coalitions" : coalitions,
         "copy": docsdata.sheets.copy,
     }
-    console.log(coalitions[0]);
-    console.log(preppeddata.parties);
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);

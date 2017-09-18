@@ -28,19 +28,25 @@ mapdivs.forEach(function(mapdiv) {
     
 })
 
-var depts = document.querySelectorAll("path");
+var depts = document.querySelectorAll(".gv-elex-map-graphic path");
+console.log(depts);
 var tooltip = document.querySelector(".gv-fe-tooltip");
 
 Array.from(depts).forEach(dept => {
     dept.addEventListener("mouseover", function(event){
         var deptname = dept.getAttribute('data-name');
-        var deptspd = dept.getAttribute('data-spdshare');
-        var deptafd = dept.getAttribute('data-afdshare');
-        var deptcdu = dept.getAttribute('data-cdushare');
+        var deptspd = twodecimals(dept.getAttribute('data-spdshare')) + "%";
+        var deptafd = twodecimals(dept.getAttribute('data-afdshare')) + "%";
+        var deptcdu = twodecimals(dept.getAttribute('data-cdushare')) + "%";
+        if (dept.classList.contains('gv-undeclared')) {
+            tooltip.innerHTML = deptname + ': yet to declare';
+        } else {
+            tooltip.innerHTML = dept.getAttribute('data-name') + '<br/ >SPD: ' + deptspd + '<br/ >AfD: ' + deptafd + '<br/ >CDU/CSU: ' + deptcdu;
+            tooltip.style.top = (event.layerY) + "px";
+            tooltip.style.left = (event.layerX) + "px";
+            tooltip.style.display = "block";
+        }
         
-        tooltip.innerHTML = dept.getAttribute('data-name') + '<br/ >SPD: ' + deptspd + '<br/ >AfD: ' + deptafd + '<br/ >CDU/CSU: ' + deptcdu;
-        tooltip.style.top = (event.layerY) + "px";
-        tooltip.style.left = (event.layerX) + "px";
-        tooltip.style.display = "block";
+
     })
 })
