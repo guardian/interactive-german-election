@@ -125,13 +125,13 @@ function prepSummaryData(data) {
             case "CDUCSU": p.gloss = "Conservatives";
             p.seats2013 = 49.3;
                 break;
-            case "SPD": p.gloss = "Social democrats";
+                case "SPD": p.gloss = "Social democrats";
             p.seats2013 = 30.6;
                 break;
-            case "FDP": p.gloss = "Liberals";
+            case "FDP": p.gloss = "Pro-business";
             p.seats2013 = 0;
                 break;
-            case "AfD": p.gloss = "Anti-immigrant";
+            case "AfD": p.gloss = "Populist right";
             p.seats2013 = 0;
                 break;
 
