@@ -153,7 +153,6 @@ export async function render() {
         json: true
     })
 
-    /*
     var data = await crawl();
     await prepmaps(data.seats,docsdata.sheets.wk_names);
     var preppeddata = prepSummaryData(data);
@@ -173,8 +172,10 @@ export async function render() {
         "copy": docsdata.sheets.copy,
     }
 
-*/
-    var zerotemplatedata = {
+
+/* ZERO STATE TEMPLATE
+
+var zerotemplatedata = {
         declared: '0',
         seats: '0',
         coalitions: '0',
@@ -182,10 +183,10 @@ export async function render() {
         exitpoll: true, 
         zero: true
     }
-
+*/
 
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
-    var html = mustache.render(mainTemplate, zerotemplatedata, partialTemplates);
+    var html = mustache.render(mainTemplate, templatedata, partialTemplates);
     return html;
 }
