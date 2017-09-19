@@ -1,3 +1,63 @@
+# German election results
+
+
+### Fetching data 
+
+ideally, go to the box:
+
+```
+ssh ubuntu@ec2-34-253-108-92.eu-west-1.compute.amazonaws.com
+```
+
+then projects > interactive-german-election > src
+
+```
+bash bashcrawl
+```
+
+this will copy the current contents of the bundeswahlleiter folder into ```daten```
+
+then 
+
+```
+gulp deploy
+```
+
+which will run crawl.js as part of its render, and also write out tidy.json to data-out (there are a couple of other options in crawl.js for writing out more files to help with debugging). Nothing uses tidy.json, but it may be helpful to switch to it (see comments in crawl.js) toward the end of the project
+
+
+
+### Deploying
+
+```
+gulp deploy
+```
+
+note: please do not deploy to live before the first results are in. live is in a zero state
+
+or, to deploy the exit poll version:
+
+```
+gulp deploy --exitpoll
+```
+
+edit exitpoll data and copy here:
+
+```
+https://docs.google.com/spreadsheets/d/1HT-9mgDgqcpHzI1ivnmwqvbUk-aZWQok5yW5J3x7Mic/edit#gid=1220662438
+```
+
+
+
+
+
+
+
+
+
+
+
+
 # Interactive atom template
 
 ```

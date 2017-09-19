@@ -1,6 +1,7 @@
 import mainTemplate from './src/templates/main.html!text'
 import coalitionTemplate from './src/templates/coalition.html!text'
 import mapsTemplate from './src/templates/maps.html!text'
+import zeroTemplate from './src/templates/zero.html!text'
 import rp from "request-promise"
 import baseconfig from '../config.json'
 import exitpollconfig from '../exitpollconfig.json'
@@ -16,10 +17,10 @@ import crawl from './crawl.js'
 //var data = JSON.parse(data2)
 
 
-
 var partialTemplates = {
     "coalitions": coalitionTemplate,
-    "maps" : mapsTemplate
+    "maps" : mapsTemplate,
+    "zero" : zeroTemplate
 }
 
 function twodecimals(input) {
@@ -151,6 +152,8 @@ export async function render() {
         uri: config.docDataJson,
         json: true
     })
+
+    /*
     var data = await crawl();
     await prepmaps(data.seats,docsdata.sheets.wk_names);
     var preppeddata = prepSummaryData(data);
@@ -162,14 +165,27 @@ export async function render() {
         var coalitions = createCoalitions(data.bundSummary.parties,docsdata.sheets.permutations);
         var seats = preppeddata.parties;    
     }
-    var templatedata = {
+
+        var templatedata = {
         "declared" : data.bundSummary.declared,
         "seats": seats,
         "coalitions" : coalitions,
         "copy": docsdata.sheets.copy,
     }
+
+*/
+    var zerotemplatedata = {
+        declared: '0',
+        seats: '0',
+        coalitions: '0',
+        copy: docsdata.sheets.copy,
+        exitpoll: true, 
+        zero: true
+    }
+
+
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
-    var html = mustache.render(mainTemplate, templatedata, partialTemplates);
+    var html = mustache.render(mainTemplate, zerotemplatedata, partialTemplates);
     return html;
 }
