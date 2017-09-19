@@ -179,6 +179,9 @@ svg {
     fill: $undeclared;
 }
 
+.gv-elex-map-graphic line {
+    stroke: #333333 !important;
+}
 
 .gv-constituency path {
     &.gv-const-winner-CDU { fill: $cdu}
@@ -215,6 +218,15 @@ svg {
       &:hover {stroke-width:3px;}                
 }
 
+.gv-spd-change path {
+    fill: $spd;
+    &.gv-spd-change-band-1 {opacity: 0.4}        
+    &.gv-spd-change-band-2 {opacity: 0.6}        
+    &.gv-spd-change-band-3 {opacity: 0.8}        
+    &.gv-spd-change-band-4 {opacity: 1}
+      &:hover {stroke-width:3px;}                
+}
+
 
 
 .gv-elex-map-graphic text {
@@ -244,8 +256,13 @@ svg {
     @include fs-textSans(3);
     border-collapse: separate;
     border-spacing: 4px;
+    @media(max-width: 400px) {
+        @include fs-textSans(2);
+    }
 
 }
+
+
 
 .gv-results-table-row {
     display: table-row;
