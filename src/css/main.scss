@@ -12,6 +12,7 @@ $afd : #8f4000;
 $fpd: #ffce4b;
 $fdp: #ffce4b;
 $others: #667488;
+$undeclared: #efefec;
 
 // Uncomment for embeds
 //@import "embed";
@@ -175,7 +176,7 @@ svg {
 .gv-elex-map-graphic path {
     stroke:  white;
     stroke-width: 1px;
-    fill: lightgrey;
+    fill: $undeclared;
 }
 
 
@@ -379,7 +380,7 @@ svg {
 }
 
 .gv-undeclared {
-    fill: lightgrey !important;
+    fill: $undeclared !important;
 }
 
 .gv-coalitions-gloss {

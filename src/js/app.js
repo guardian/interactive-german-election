@@ -40,6 +40,9 @@ Array.from(depts).forEach(dept => {
         var deptcdu = twodecimals(dept.getAttribute('data-cdushare')) + "%";
         if (dept.classList.contains('gv-undeclared')) {
             tooltip.innerHTML = deptname + ': yet to declare';
+            tooltip.style.top = (event.layerY) + "px";
+            tooltip.style.left = (event.layerX) + "px";
+            tooltip.style.display = "block";
         } else {
             tooltip.innerHTML = dept.getAttribute('data-name') + '<br/ >SPD: ' + deptspd + '<br/ >AfD: ' + deptafd + '<br/ >CDU/CSU: ' + deptcdu;
             tooltip.style.top = (event.layerY) + "px";
