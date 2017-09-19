@@ -25,6 +25,8 @@ gulp deploy
 
 which will run crawl.js as part of its render, and also write out tidy.json to data-out (there are a couple of other options in crawl.js for writing out more files to help with debugging). Nothing uses tidy.json, but it may be helpful to switch to it (see comments in crawl.js) toward the end of the project
 
+NOTE: please don't deploy to live until the first results are in. There is a placeholder deployed to live outlining when to expect results. Please deploy to preview for testing purposes
+
 
 
 ### Deploying
