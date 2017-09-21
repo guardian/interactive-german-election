@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="simple_types.xsd" />
+	<xs:simpleType name="QuelleType">
+		<xs:annotation>
+			<xs:documentation>Herkunft der Importdatei</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="normal">
+				<xs:annotation>
+					<xs:documentation>STATSPEZ-Nachichten</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="master">
+				<xs:annotation>
+					<xs:documentation>Replikationsnachricht</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="extern">
+				<xs:annotation>
+					<xs:documentation>Importdatei</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Gebietsergebnis">
+		<xs:annotation>
+			<xs:documentation>Importformat eines Ergebniseingangs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Gruppenergebnis" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Stimmenergebnisse einer Gruppe im Gebiet
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Stimmergebnis" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Stimmergebnis einer Stimmart
+									</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Stimmart" type="StimmartType"
+										use="required">
+										<xs:annotation>
+											<xs:documentation>Keine / Liste / Direkt</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Stimmen" type="xs:nonNegativeInteger"
+										use="required">
+										<xs:annotation>
+											<xs:documentation>Anz. Stimmen der Gruppe im Gebiet
+											</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Position" type="PositionType"
+							use="required">
+							<xs:annotation>
+								<xs:documentation>Position der Gruppe auf dem Wahlzettel
+								</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="GruppeGebiet" use="optional">
+							<xs:annotation>
+								<xs:documentation>ggfs. landesspezifischer Gruppenschlüssel
+								</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Fehler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Eventuell aufgetretene Fehler</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Fehlerart" type="FehlerartType"
+							use="required">
+							<xs:annotation>
+								<xs:documentation>Muss / Kann - Fehler</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Fehlertext" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>ggfs. nähere Beschreibung</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Quelle" type="QuelleType" use="optional"
+				default="extern">
+				<xs:annotation>
+					<xs:documentation>Unterscheidung zwischen Replikationsnachrichten.
+						STATSPEZ-Nachrichten und Importdateien</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Wahlkurzname" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Kurzname der Wahl</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Nummer" type="GebietNummerType" use="required">
+				<xs:annotation>
+					<xs:documentation>Nummer des Gebietes</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gebietsart" type="GebietsartType"
+				use="required">
+				<xs:annotation>
+					<xs:documentation>Art des Gebietes</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="NrAenderung" type="xs:nonNegativeInteger"
+				use="optional">
+				<xs:annotation>
+					<xs:documentation>Korrekturnummer des Gebietsergebnisses
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Eingabeart" type="EingabeartType"
+				use="optional">
+				<xs:annotation>
+					<xs:documentation>Neuaufnahme, Korrektur, Kannfehler, Replikation
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="wahlmetadaten_typ.xsd" />
+	<xs:include schemaLocation="gebiets_typ.xsd" />
+	<xs:element name="Gebiet">
+		<xs:annotation>
+			<xs:documentation>Metadaten eines Gebietes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="GebietsType">
+					<xs:sequence>
+						<xs:element name="Gruppe" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Gruppenreihenfolge des Gebietes, wenn vom
+									überg. Gebiet verschieden</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="Gruppe" type="GruppeType" use="required">
+									<xs:annotation>
+										<xs:documentation>Gruppenschlüssel</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="Gruppenart" type="GruppenartType"
+									use="required" />
+								<xs:attribute name="DirektZugelassen" type="xs:boolean"
+									use="optional">
+									<xs:annotation>
+										<xs:documentation>hat Direktkandidaten im Gebiet
+										</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="ListeZugelassen" type="xs:boolean"
+									use="optional">
+									<xs:annotation>
+										<xs:documentation>tritt im Gebiet als Liste an
+										</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="Ausgeschert" type="xs:boolean"
+									use="optional" default="false">
+									<xs:annotation>
+										<xs:documentation>gehört zur Listenverbindung
+										</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="Gebietsliste" type="xs:boolean"
+									use="optional" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="Kuerzel" type="xs:string" use="optional">
+						<xs:annotation>
+							<xs:documentation>Gebietskürzel zur Anzeige gebietsbezogener
+								Sitzverteilungen</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Gebiete">
+		<xs:annotation>
+			<xs:documentation>Metadaten aller Gebiete</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WahlMetadaten" type="WahlMetadatenType">
+					<xs:annotation>
+						<xs:documentation>Technische Metadaten dieser Wahl
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Gebiet" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

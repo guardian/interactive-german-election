@@ -11,6 +11,14 @@ ssh ubuntu@ec2-34-253-108-92.eu-west-1.compute.amazonaws.com
 
 then projects > interactive-german-election > src
 
+# To fetch new data as it's published
+
+```
+bash bashloop
+```
+
+# To fetch once and publish
+
 ```
 bash bashcrawl
 ```
@@ -29,13 +37,7 @@ NOTE: please don't deploy to live until the first results are in. There is a pla
 
 
 
-### Deploying
-
-```
-gulp deploy
-```
-
-note: please do not deploy to live before the first results are in. live is in a zero state
+### Exit poll version
 
 or, to deploy the exit poll version:
 

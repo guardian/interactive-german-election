@@ -1,4 +1,4 @@
 #!/bin/bash
 
-lftpout=$(lftp -e 'mirror -v . ./data/data-real/root; exit' -u medien,A4MV!ds2017rl https://service.bundeswahlleiter.de/medien/)
+lftpout=$(lftp -e 'mirror -v . ./data/data-in/; exit' -u medien,A4MV!ds2017rl https://service.bundeswahlleiter.de/medien/)
 echo "$lftpout"

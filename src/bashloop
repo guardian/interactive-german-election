@@ -1,0 +1,23 @@
+#!/bin/bash
+
+while true
+do
+
+
+lftpout=$(lftp -e 'mirror -v . ./data/data-in; exit' -u medien,A4MV!ds2017rl https://service.bundeswahlleiter.de/medien/)
+echo "$lftpout"
+lines=$(echo "$lftpout" | wc -l)
+
+if [ "$lines" -lt "3" ]; then
+	echo "nothing changed"
+fi
+
+if [ "$lines" -gt "2" ]; then
+	echo "files changed"
+	gulp deploylive
+fi
+
+    echo "Waiting 60 seconds..."
+    sleep 60
+    echo "Syncing..."
+done

@@ -1,4 +1,4 @@
-
+console.log('app running')
 var xhr = new XMLHttpRequest;
 
 xhr.open('GET','<%= path %>/resultsmap.html',false);

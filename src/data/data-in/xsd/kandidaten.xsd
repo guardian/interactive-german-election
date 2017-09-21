@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="wahlmetadaten_typ.xsd"/>
+	<xs:include schemaLocation="simple_types.xsd"/>
+	<xs:element name="Kandidat">
+		<xs:annotation>
+			<xs:documentation>Info eines Kandidaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Personendaten"/>
+				<xs:element ref="Wahldaten"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Kandidaten">
+		<xs:annotation>
+			<xs:documentation>Informationen zu allen Kandidaten
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WahlMetadaten" type="WahlMetadatenType">
+					<xs:annotation>
+						<xs:documentation>Technische Metadaten dieser Wahl
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Kandidat" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Liste">
+		<xs:annotation>
+			<xs:documentation>Daten des Listenkandidaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Gebietsart" type="GebietsartType" use="required">
+				<xs:annotation>
+					<xs:documentation>Land, für das er antritt</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gebietsnummer" type="GebietNummerType" use="required"/>
+			<xs:attribute name="Gebietsname" type="xs:string" use="optional"/>
+			<xs:attribute name="Wahlgebietsart" type="GebietsartType" use="optional"/>
+			<xs:attribute name="Wahlgebietsnummer" type="GebietNummerType" use="optional"/>
+			<xs:attribute name="Wahlgebietsname" type="xs:string" use="optional"/>
+			<xs:attribute name="Gruppe" type="GruppeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Schlüssel der Gruppe, für die er antritt
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gruppenname" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Kurzname der Gruppe, nötig für Internet
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Listenplatz" type="PlatzType" use="required">
+				<xs:annotation>
+					<xs:documentation>Listenplatz des Kandidaten</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Personendaten">
+		<xs:annotation>
+			<xs:documentation>Persönliche Angaben</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Staatsangehoerigkeiten" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="NameTitelVorname1" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NameTitelVorname2" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="29"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="Vorname" type="xs:string" use="optional"/>
+            <xs:attribute name="Titel" type="xs:string" use="optional"/>
+			<xs:attribute name="Namensbestandteile" type="xs:string" use="optional"/>
+			<xs:attribute name="Plz" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Wohnort1" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Wohnort2" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="27"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="WohnortLand" type="LandType" use="optional"/>
+			<xs:attribute name="WohnortImAusland" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Strasse" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Geburtsort1" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Geburtsort2" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Geburtsdatum" type="GeburtsdatumType" use="required"/>
+			<xs:attribute name="Beruf1" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="70"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Beruf2" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="29"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Berufsschluessel" type="xs:int" use="required"/>
+			<xs:attribute name="Geschlecht" type="GeschlechtType" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Staatsangehoerigkeiten">
+		<xs:annotation>
+			<xs:documentation>Staatsangehörigkeiten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Staatsangehoerigkeit" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Staatsangehoerigkeit">
+		<xs:annotation>
+			<xs:documentation>Staatsangehörigkeit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Schluessel" type="StaatsangehoerigkeitSchluesselType" use="required">
+				<xs:annotation>
+					<xs:documentation>3-stelliger Schlüssel der Staatsangehörigkeit</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Verknuepfung">
+		<xs:annotation>
+			<xs:documentation>Verweis auf weitere Kandidatur</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Kennzeichen" type="KennzeichenType" use="required"/>
+			<xs:attribute name="Gebietsart" type="GebietsartType" use="required">
+				<xs:annotation>
+					<xs:documentation>Kennziffer des Landes der Zweitkandidatur
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gebietsnummer" type="GebietNummerType" use="required"/>
+			<xs:attribute name="Gebietsname" type="xs:string" use="optional"/>
+			<xs:attribute name="Gruppe" type="GruppeType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Schlüssel der Gruppe der zweiten Kandidatur, kann
+						vom aktuellen abweichen
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gruppenname" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Kurzname der Gruppe der zweiten Kandidatur, nötig
+						für Internet
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Wahlgebietsart" type="GebietsartType" use="optional"/>
+			<xs:attribute name="Wahlgebietsnummer" type="GebietNummerType" use="optional"/>
+			<xs:attribute name="Wahlgebietsname" type="xs:string" use="optional"/>
+			<xs:attribute name="Listenplatz" type="PlatzType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Listenplatz der Zweit- oder Doppelkandidatur
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Wahldaten">
+		<xs:annotation>
+			<xs:documentation>Wahlspezifische Daten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="Direkt"/>
+					<xs:element ref="Liste"/>
+				</xs:choice>
+				<xs:element ref="Verknuepfung" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Kennzeichen" type="KennzeichenType" use="required"/>
+			<xs:attribute name="GewaehltVorp" type="GewaehltType" use="optional" default="N">
+				<xs:annotation>
+					<xs:documentation>wurde Kand. in der Vorperiode gewählt?
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gewaehlt" type="GewaehltType" use="optional" default="N">
+				<xs:annotation>
+					<xs:documentation>Wurde Kand. gewählt bzw. worüber
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Losentscheid" type="xs:boolean" use="optional" default="false">
+				<xs:annotation>
+					<xs:documentation>Wurde er per Losentscheid gewählt?
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Prozent" type="ProzentType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Nur für gewählte Direktkandidaten: Anteil der Stimmen, mit denen der Kandidat gewählt wurde</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Direkt">
+		<xs:annotation>
+			<xs:documentation>Daten des Direktkandidaten</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Gebietsart" type="GebietsartType" use="required">
+				<xs:annotation>
+					<xs:documentation>Kennzahl des Wk, in dem der Kand. antritt
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gebietsnummer" type="GebietNummerType" use="required"/>
+			<xs:attribute name="Gebietsname" type="xs:string" use="optional"/>
+			<xs:attribute name="Gruppe" type="GruppeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Schlüssel der Gruppe des Kandidaten
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Gruppenname" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>Kurzname der Gruppe, nötig für Internet
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="GehoertZuWaehlergruppe" type="xs:boolean" use="optional" default="false">
+				<xs:annotation>
+					<xs:documentation>Gehört der Direktkandidat zu einer Wählergruppe?
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="GewaehltType">
+		<xs:annotation>
+			<xs:documentation>Ob und worüber wurde der Kandidat gewählt
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="J"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="Z"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KennzeichenType">
+		<xs:annotation>
+			<xs:documentation>Für welche Kandidatur gilt der Datensatz
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BEWERBER"/>
+			<xs:enumeration value="ERSATZBEWERBER"/>
+			<xs:enumeration value="DOPPELBEWERBER"/>
+			<xs:enumeration value="ERSTSTIMMENBEWERBER"/>
+			<xs:enumeration value="ZWEITSTIMMENBEWERBER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GeschlechtType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="w"/>
+			<xs:enumeration value="m"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GeburtsdatumType">
+		<xs:annotation>
+			<xs:documentation>enthält das Geburtsdatum (kandidaten.xml) bzw. das
+				Geburtsjahr (gewaehlte.xml)
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:date xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="StaatsangehoerigkeitSchluesselType">
+		<xs:annotation>
+			<xs:documentation>enthält den 3-stelligen Schlüssel der Staatsangehörigkeit
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

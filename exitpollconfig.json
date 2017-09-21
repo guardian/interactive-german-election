@@ -1,0 +1,21 @@
+{
+    "title": "German election exit poll 2017",
+    "path": "2017/09/german-election-exit-poll",
+    "exitpoll" : true,
+"versionstore": {
+        "comment": "the two versions are here as objects. copy the appropriate version up to the top level of the json to deploy it. ",
+
+        "officialversion": {
+            "title": "German election results 2017",
+            "path": "2017/09/german-election"
+        },
+
+        "exitpollversion": {
+            "title": "German election exit poll 2017",
+            "path": "2017/09/german-election-exit-poll",
+            "exitpoll" : true
+        }
+    },
+    "docDataJson": "https://interactive.guim.co.uk/docsdata-test/1HT-9mgDgqcpHzI1ivnmwqvbUk-aZWQok5yW5J3x7Mic.json",
+    "docData": "https://docs.google.com/spreadsheets/d/1HT-9mgDgqcpHzI1ivnmwqvbUk-aZWQok5yW5J3x7Mic/edit?usp=drivesdk"
+}

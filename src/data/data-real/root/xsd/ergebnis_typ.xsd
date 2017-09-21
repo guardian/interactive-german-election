@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:include schemaLocation="gebiets_typ.xsd" />
+	<xs:complexType name="GebietsergebnisType">
+		<xs:annotation>
+			<xs:documentation>Ergebnisse eines Gebietes</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="GebietsType">
+				<xs:sequence>
+					<xs:element name="Direktergebnis" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Zusätzliche Daten, falls Gebiet Wk ist
+							</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Gewinner" type="SiegerType"
+									maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Gewinner, bei Erststimmengleichheit mehrere;
+											u.U. Gewinner bei Vergleichswahl</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="Erstunterlegener" type="SiegerType"
+									minOccurs="0" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Zweiter, bei Erststimmengleichheit mehrere
+										</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="LosEntscheid" type="xs:boolean"
+								use="optional" default="false" />
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Gruppenergebnis" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Ergebnisse einer Gruppe in einem Gebiet
+							</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Stimmergebnis" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Ergebnisse einer Stimmart</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="Stimmart" type="StimmartType"
+											use="required" />
+										<xs:attribute name="Anzahl" type="StimmenzahlType"
+											use="required" />
+										<xs:attribute name="Prozent" type="ProzentType"
+											use="optional" />
+										<xs:attribute name="AnzahlVergleich" type="StimmenzahlType" />
+										<xs:attribute name="ProzentVergleich" type="ProzentType" />
+										<xs:attribute name="Differenz" type="StimmenzahlType" />
+										<xs:attribute name="ProzentDifferenz" type="ProzentType" />
+										<xs:attribute name="AnzahlVergleich2" type="StimmenzahlType" />
+										<xs:attribute name="ProzentVergleich2" type="ProzentType" />
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="Gruppe" type="GruppeType" use="required">
+								<xs:annotation>
+									<xs:documentation>Gruppenschlüssel</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="Gruppenart" type="GruppenartType"
+								use="optional" />
+							<xs:attribute name="Name" use="optional">
+								<xs:annotation>
+									<xs:documentation>Name der Gruppe</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="39" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="Direktkandidat" type="xs:string"
+								use="optional" />
+							<xs:attribute name="DirektZugelassen" type="xs:boolean"
+								use="optional">
+								<xs:annotation>
+									<xs:documentation>true, wenn im Gebiet ein Direktkandidat
+										antritt</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="ListeZugelassen" type="xs:boolean"
+								use="optional">
+								<xs:annotation>
+									<xs:documentation>true, wenn im Gebiet als Liste aufgestellt
+									</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="AuswertungseinheitenErwartet" type="xs:nonNegativeInteger"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation />
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="AuswertungseinheitenEingetroffen"
+					type="xs:nonNegativeInteger" use="optional">
+					<xs:annotation>
+						<xs:documentation>Anzahl gültiger Wahlkreiseingänge im Gebiet
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ErgebnisVollstaendig" type="xs:boolean"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>Alle Wahlkreise eingetroffen?</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="NrAenderung" type="xs:nonNegativeInteger"
+					use="required">
+					<xs:annotation>
+						<xs:documentation>aktuelle Korrekturnummer</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SiegerType">
+		<xs:annotation>
+			<xs:documentation>Name und Gruppenschlüssel eines Kandidaten
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Name" use="required">
+			<xs:annotation>
+				<xs:documentation>Name des Kandidaten</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="60" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Gruppe" type="GruppeType" use="required">
+			<xs:annotation>
+				<xs:documentation>Gruppenschlüssel des Kandidaten</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Wahlergebnisart" type="WahlergebnisartType"
+			use="required">
+			<xs:annotation>
+				<xs:documentation>BW, Vorläufig, Endgültig, Vorperiode
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LosEntscheid" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Wurde der Kandidat per Los gewählt
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

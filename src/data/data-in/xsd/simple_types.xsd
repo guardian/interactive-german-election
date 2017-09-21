@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="LandType">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="\d(\d)?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WahlkreisType">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="\d{3}|\d{5}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GebietNummerType">
+		<xs:restriction base="xs:positiveInteger" />
+	</xs:simpleType>
+	<xs:simpleType name="GebietsartType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BUND" />
+			<xs:enumeration value="LAND" />
+			<xs:enumeration value="WAHLKREIS" />
+			<xs:enumeration value="KREIS" />
+			<xs:enumeration value="GEMEINDE" />
+			<xs:enumeration value="ORTSTEIL" />
+			<xs:enumeration value="STIMMBEZIRK" />
+			<xs:enumeration value="WAHLLOKAL" />
+			<xs:enumeration value="SONDERGEBIET" />
+			<xs:enumeration value="GEMEINDE_BEREICH" />
+			<xs:enumeration value="KREIS_BEREICH" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GebietsauspraegungType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STADTKREIS" />
+			<xs:enumeration value="KREISFREIE_STADT" />
+			<xs:enumeration value="KREIS" />
+			<xs:enumeration value="LANDKREIS" />
+			<xs:enumeration value="STADTVERBAND"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GruppeType">
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+	<xs:simpleType name="PlatzType">
+		<xs:restriction base="xs:positiveInteger" />
+	</xs:simpleType>
+	<xs:simpleType name="WahlergebnisartType">
+		<xs:annotation>
+			<xs:documentation>BW, Vorläufig, Endgültig, Vorperiode
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VORPERIODE" />
+			<xs:enumeration value="VORLAEUFIG" />
+			<xs:enumeration value="ENDGUELTIG" />
+			<xs:enumeration value="BRIEFWAHL" />
+			<xs:enumeration value="VERGLEICH" />
+			<xs:enumeration value="KEIN" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StimmartType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DIREKT" />
+			<xs:enumeration value="LISTE" />
+			<xs:enumeration value="KEINE" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EingabeartType">
+		<xs:annotation>
+			<xs:documentation>Neuaufnahme, Korrektur, Kannfehler, Replikation
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="N">
+				<xs:annotation>
+					<xs:documentation>Neuaufnahme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="K">
+				<xs:annotation>
+					<xs:documentation>Korrektur</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Z">
+				<xs:annotation>
+					<xs:documentation>Bestätigung Kannfehler</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation>Sofortige Übernahme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FehlerartType">
+		<xs:annotation>
+			<xs:documentation>Kann-Fehler, Muß-Fehler</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KANN">
+				<xs:annotation>
+					<xs:documentation>Kann-Fehler</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MUSS">
+				<xs:annotation>
+					<xs:documentation>Muß-Fehler</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PositionType">
+		<xs:union memberTypes="xs:positiveInteger">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="WB" />
+					<xs:enumeration value="WAE" />
+					<xs:enumeration value="GUE" />
+					<xs:enumeration value="UNG" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="GruppenartType">
+		<xs:annotation>
+			<xs:documentation>Partei, Einzelkand. usw.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PARTEI" />
+			<xs:enumeration value="ALLGEMEIN" />
+			<xs:enumeration value="WAEHLERGRUPPE" />
+			<xs:enumeration value="EINZELKANDIDAT" />
+			<xs:enumeration value="UEBRIGE" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StimmenzahlType">
+		<xs:union memberTypes="xs:integer">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="n/a" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="ProzentType">
+		<xs:union memberTypes="xs:decimal">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="n/a" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+</xs:schema>

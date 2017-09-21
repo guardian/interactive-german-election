@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="simple_types.xsd" />
+	<xs:complexType name="GebietsType">
+		<xs:annotation>
+			<xs:documentation>Gebietsmetadaten</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0">
+			<xs:element name="Wahlgebiet" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Marker für Wahlgebiete</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="AnzahlSitze" type="xs:positiveInteger"
+						use="required">
+						<xs:annotation>
+							<xs:documentation>Gesamtzahl per Algorithmus zu verteilender
+								Sitze (ohne Direktmandate)</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="ProzentHuerde" type="xs:decimal"
+						use="optional" default="0">
+						<xs:annotation>
+							<xs:documentation>Prozenthürde zur Teilnahme am
+								Verteilungsverfahren</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Algorithmus">
+						<xs:annotation>
+							<xs:documentation>Explizite Angabe des zu verwendenden
+								Algorithmus</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:nonNegativeInteger">
+								<xs:minInclusive value="0" />
+								<xs:maxInclusive value="5" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GebietText">
+				<xs:annotation>
+					<xs:documentation>Bezeichnung des Gebietes</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GebietTeilText" minOccurs="0" maxOccurs="5">
+				<xs:annotation>
+					<xs:documentation>Bezeichnung getrennt</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string" />
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Gebietsnummer" type="GebietNummerType"
+			use="required">
+			<xs:annotation>
+				<xs:documentation>Eindeutige Kennzahl des Gebietes
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Gebietsart" type="GebietsartType"
+			use="required">
+			<xs:annotation>
+				<xs:documentation>Art des Gebietes</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="UegGebietsnummer" type="GebietNummerType"
+			use="optional" />
+		<xs:attribute name="UegGebietsart" type="GebietsartType"
+			use="optional" />
+		<xs:attribute name="Auspraegung" type="GebietsauspraegungType"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Momentan Ausprägung eines Kreises: Stadtkreis,
+					Kreisfreie Stadt usw.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="AuswertungseinheitenGesamt" type="xs:nonNegativeInteger"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Anzahl Auswertungseinheiten im Gebiet
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="erwarteteAnzahlWahlberechtigte" type="xs:nonNegativeInteger"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Bayernspezifische Erweiterung für speziellen
+					Kann-Fehler (ohne Vergleichswahl)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Bevoelkerung" type="xs:nonNegativeInteger"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Bei Bundestagswahl 2013 (erste Primärverteilung)
+					benötigt für alle Bundesländer</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

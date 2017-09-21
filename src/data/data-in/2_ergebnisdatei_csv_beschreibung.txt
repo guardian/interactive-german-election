@@ -1,0 +1,32 @@
+﻿Beschreibung Ergebnisdatei (CSV)
+
+Die bereitgestellte Datei "kerg.csv" enthält Wahlkreisergebnisse, Landesergebnisse und das Bundesergebnis der jeweiligen Wahl im Format "CSV".
+
+Das Trennzeichen für die Einzelangaben ist ein Semikolon.
+
+Die Tabelle beginnt mit Informationen
+- über die Wahlart ("Bundestagswahl"/"Europawahl"), das Wahljahr (z.B: BTW_BUND 17 für die Bundestagswahl 2017)und
+- den Dateistatus ("Zwischenergebnis"/"Vorläufig"/"Endgültig").
+
+Während die Datei bei den Status "Vorläufig" und "Endgültig" immer komplett gefüllt ist, wird die Datei bei dem Status "Zwischenergebnis" variabel befüllt:
+Nur die bereits vorliegenden Wahlkreise enthalten Stimmzahlen, die Landes- und Bundeszeilen enthalten das jeweilige Aggregat dieser vorliegenden Wahlkreise.
+
+Der Tabellenkopf beschreibt die in den Spalten dargestellten Werte.
+
+Spaltenbeschreibung:
+Kennnummer, Gebietstext, übergeordnetes Gebiet, Ergebnisgruppen.
+
+Ergebnisgruppen:
+Wahlberechtigte, Wähler, Ungültige, Gültige, Parteien (in Bundesreihenfolge), Übrige.
+
+Jede Ergebnisgruppe (also auch jede Partei) besteht aus 4 Spalten: 
+Die ersten beiden Spalten jeder Ergebnisgruppe beziehen sich auf die Erststimmen, 
+die letzten beiden Spalten jeder Ergebnisgruppe beziehen sich auf die Zweitstimmen.
+Die linken Spalten enthalten die Stimmen der jeweiligen Ergebnisart ("Vorläufig"/"Endgültig"),
+die rechten Spalten enthalten die Stimmen der Ergebnisart "Vorperiode". 
+
+Zeilenbeschreibung:
+Es gibt jeweils eine Ergebniszeile für jeden Wahlkreis, jedes Land und den Bund.
+
+Die Landeszeilen befinden sich jeweils unter den Wahlkreiszeilen des jeweiligen Landes.
+In der letzten Zeile wird das Bundesergebnis dargestellt.
