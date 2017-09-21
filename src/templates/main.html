@@ -41,7 +41,7 @@
                 <div class="gv-results-table-cell gv-party-gloss"></div>
                 <div class="gv-results-table-cell gv-table-numbers">% of <br/>votes</div>
                 <div class="gv-results-table-cell gv-table-numbers">+/- %</div>
-                <div class="gv-results-table-cell gv-table-numbers">% of <br/>seats</div>
+                <div class="gv-results-table-cell gv-table-numbers">% of <br/>seats<sup>*</sup></div>
             </div>
             {{#seats}}
             <div class="gv-results-table-row">
@@ -65,7 +65,9 @@
 
     </div>
 
+    <div class="gv-source gv-gloss">Source: {{#exitpoll}}{{#copy}}{{exitpollsource}}{{/copy}}{{/exitpoll}}{{^exitpoll}}German Federal Returning Officer{{/exitpoll}}</div>
 </div>
+
 
 {{/zero}}
 

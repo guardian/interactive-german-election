@@ -173,7 +173,7 @@ export async function render() {
     }
 
 
-/* ZERO STATE TEMPLATE
+ /* ZERO STATE TEMPLATE
 
 var zerotemplatedata = {
         declared: '0',
@@ -183,7 +183,7 @@ var zerotemplatedata = {
         exitpoll: true, 
         zero: true
     }
-*/
+  */
 
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
