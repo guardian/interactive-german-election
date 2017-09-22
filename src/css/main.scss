@@ -421,3 +421,20 @@ svg {
         margin-top: 0px;
 }
 }
+
+
+.gv-shocking-practice {
+    margin-bottom: 40px;
+}
+
+.interactive-ad-banner {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    @include mq($from: tablet) {
+        .ad-slot--rendered {
+            margin: 20px 0 40px 0;
+        }
+    }
+}
