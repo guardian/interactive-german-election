@@ -91,7 +91,7 @@ function prepSummaryData(data) {
     summary.parties.unshift(cducsu);
     // Remove individual parties from list
     summary.parties = summary.parties.filter(function (p) {
-        return p.party !== 'CSU' && p.party !== 'CDU' && cleannumber(p.percent) > 2.5;
+        return p.party !== 'CSU' && p.party !== 'CDU' && cleannumber(p.percent) > 3;
     })
     var bundestagtotal = 0;
     summary.parties.forEach(function (p) {
@@ -184,7 +184,7 @@ var zerotemplatedata = {
         zero: true
     }
   */
-
+    console.log(templatedata);
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);
