@@ -17,7 +17,7 @@ if [ "$lines" -gt "2" ]; then
 	gulp deploylive
 fi
 
-    echo "Waiting 60 seconds..."
-    sleep 60
+    echo "Waiting five minutes..."
+    sleep 300
     echo "Syncing..."
 done
