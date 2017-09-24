@@ -4,4 +4,4 @@ bower_components/
 .local/
 yarn.lock
 .DS_Store
-src/data
+src/data/
