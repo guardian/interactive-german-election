@@ -184,7 +184,7 @@ var zerotemplatedata = {
         zero: true
     }
   */
-    console.log(templatedata);
+
     if (config.exitpoll == true) { 
         templatedata.exitpoll = true };
     var html = mustache.render(mainTemplate, templatedata, partialTemplates);

@@ -128,11 +128,11 @@ export default async function prepmaps(seats, wk_names) {
 
             $(w).attr('data-afdshare', `${afdshare}`)
 
-            if (afdshare >= 40) {
+            if (afdshare >= 20) {
                 $(w).addClass('gv-afd-band-4');
-            } else if (afdshare < 40 && afdshare >= 30) {
+            } else if (afdshare < 20 && afdshare >= 10) {
                 $(w).addClass('gv-afd-band-3');
-            } else if (afdshare < 30 && afdshare >= 20) {
+            } else if (afdshare < 10 && afdshare >= 5) {
                 $(w).addClass('gv-afd-band-2');
             } else {
                 $(w).addClass('gv-afd-band-1')
