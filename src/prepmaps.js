@@ -31,6 +31,8 @@ function cleanup(constituencies) {
                 break;
             case '3': constituency.constituencyWinnerParty = "CSU";
                 break;
+                case '35': constituency.constituencyWinnerParty = "afd";
+                break;
             default: "undeclared"
         }
     })
